@@ -17,6 +17,12 @@
   'path':
     'prefix': 'path'
     'body': '<path fill="$1" stroke="$2" stroke-width="1" \n      d="$3" />\n'
+  'pattern':
+    'prefix': 'pattern'
+    'body': '<pattern id="$1" width="$2" height="$3">\n  $4\n</pattern>'
+  'radialGradient':
+    'prefix': 'radial'
+    'body': '<radialGradient id="$1">\n  <stop offset="${2:0}" stop-color="$3" />\n  <stop offset="${4:1}" stop-color="$5" />\n</radialGradient>'
   'rect':
     'prefix': 'rect'
     'body': '<rect x="${1:0}" y="${2:0}" width="${3:200}" height="${4:100}" fill="${5:red}" />'
@@ -28,7 +34,7 @@
     'body': '<stop offset="${1:0.5}" stop-color="$2" />'
   'svg':
     'prefix': 'svg'
-    'body': '<svg xmlns="http://www.w3.org/2000/svg"\n     xmlns:xlink="http://www.w3.org/1999/xlink"\n     width="${1:240}" height="${2:320}"\n     viewBox="0 0 $1 $2"\n     version="1.1">\n  <title>${3:Title here}</title>\n\n  <script type="text/javascript">\n  <![CDATA[\n\n    // SVG script here\n\n  ]]>\n  </script>\n\n  $O\n</svg>'
+    'body': '<svg xmlns="http://www.w3.org/2000/svg"\n     xmlns:xlink="http://www.w3.org/1999/xlink"\n     width="${1:240}" height="${2:320}"\n     viewBox="0 0 $1 $2"\n     version="1.1">\n  <title>${3:Title here}</title>\n\n  <script><![CDATA[\n\n    // SVG script here\n\n  ]]></script>\n\n  $4\n</svg>'
   'text':
     'prefix': 'text'
     'body': '<text x="$1" y="$2">$3</text>'
@@ -36,9 +42,6 @@
     'prefix': 'use'
     'body': '<use xlink:href="$1" x="$2" y="$3" />'
 '.text.xml.svg .meta.tag.xml':
-  'onactivate':
-    'prefix': 'on'
-    'body': 'onactivate="$1"'
   'onclick':
     'prefix': 'on'
     'body': 'onclick="$1"'
@@ -63,6 +66,12 @@
   'onmouseover':
     'prefix': 'on'
     'body': 'onmouseover="$1"'
+  'onmouseenter':
+    'prefix': 'on'
+    'body': 'onmouseenter="$1"'
+  'onmouseleave':
+    'prefix': 'on'
+    'body': 'onmouseleave="$1"'
   'onmouseup':
     'prefix': 'on'
     'body': 'onmouseup="$1"'
@@ -75,3 +84,6 @@
   'translate':
     'prefix': 'tr'
     'body': 'transform="translate($1, $2)"'
+  'matrix':
+    'prefix': 'ma'
+    'body': 'transform="matrix($1, $2, $3, $4, $5, $6)"'
