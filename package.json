@@ -1,7 +1,7 @@
 {
   "name": "language-svg",
-  "version": "0.0.1",
-  "description": "Atom.io language plugin for svg based on https://github.com/grorg/svg-tmbundle.",
+  "version": "0.0.0",
+  "description": "Atom language support for SVG",
   "repository": "https://github.com/ed-ed/language-svg",
   "license": "MIT",
   "engines": {
