@@ -1,0 +1,77 @@
+'.text.xml.svg':
+  'animate':
+    'prefix': 'animate'
+    'body': '<animate attributeName="$1" values="$2;$3" begin="$4" dur="$5s" fill="${6:freeze}" />'
+  'animateColor':
+    'prefix': 'animate'
+    'body': '<animateColor attributeName="${1:fill}" values="$2;$3" begin="$4" dur="$5s" fill="${6:freeze}" />'
+  'animateTransform':
+    'prefix': 'animate'
+    'body': '<animateTransform type="${1:scale}" values="$2;$3" begin="$4" dur="$5s" fill="${6:freeze}" additive="${7:sum}" />'
+  'circle':
+    'prefix': 'circle'
+    'body': '<circle cx="${1:0}" cy="${2:0}" r="${3:50}" fill="${5:red}" />'
+  'linearGradient':
+    'prefix': 'linear'
+    'body': '<linearGradient id="$1" x1="${2:0}" x2="${3:0}" y1="${4:0}" y2="${5:1}">\n  <stop offset="${6:0}" stop-color="$7" />\n  <stop offset="${8:1}" stop-color="$9" />\n</linearGradient>'
+  'path':
+    'prefix': 'path'
+    'body': '<path fill="$1" stroke="$2" stroke-width="1" \n      d="$3" />\n'
+  'rect':
+    'prefix': 'rect'
+    'body': '<rect x="${1:0}" y="${2:0}" width="${3:200}" height="${4:100}" fill="${5:red}" />'
+  'script (external)':
+    'prefix': 'script'
+    'body': '<script xlink:href="$1" />'
+  'stop':
+    'prefix': 'stop'
+    'body': '<stop offset="${1:0.5}" stop-color="$2" />'
+  'svg':
+    'prefix': 'svg'
+    'body': '<svg xmlns="http://www.w3.org/2000/svg"\n     xmlns:xlink="http://www.w3.org/1999/xlink"\n     width="${1:240}" height="${2:320}"\n     viewBox="0 0 $1 $2"\n     version="1.1">\n  <title>${3:Title here}</title>\n\n  <script type="text/javascript">\n  <![CDATA[\n\n    // SVG script here\n\n  ]]>\n  </script>\n\n  $O\n</svg>'
+  'text':
+    'prefix': 'text'
+    'body': '<text x="$1" y="$2">$3</text>'
+  'use':
+    'prefix': 'use'
+    'body': '<use xlink:href="$1" x="$2" y="$3" />'
+'.text.xml.svg .meta.tag.xml':
+  'onactivate':
+    'prefix': 'on'
+    'body': 'onactivate="$1"'
+  'onclick':
+    'prefix': 'on'
+    'body': 'onclick="$1"'
+  'onfocusin':
+    'prefix': 'on'
+    'body': 'onfocusin="$1"'
+  'onfocusout':
+    'prefix': 'on'
+    'body': 'onfocusout="$1"'
+  'onload':
+    'prefix': 'on'
+    'body': 'onmouseout="$1"'
+  'onmousedown':
+    'prefix': 'on'
+    'body': 'onmousedown="$1"'
+  'onmousemove':
+    'prefix': 'on'
+    'body': 'onmousemove="$1"'
+  'onmouseout':
+    'prefix': 'on'
+    'body': 'onmouseout="$1"'
+  'onmouseover':
+    'prefix': 'on'
+    'body': 'onmouseover="$1"'
+  'onmouseup':
+    'prefix': 'on'
+    'body': 'onmouseup="$1"'
+  'rotate':
+    'prefix': 'ro'
+    'body': 'transform="rotate($1, $2)"'
+  'scale':
+    'prefix': 'sc'
+    'body': 'transform="scale($1)"'
+  'translate':
+    'prefix': 'tr'
+    'body': 'transform="translate($1, $2)"'

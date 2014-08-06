@@ -1,0 +1,96 @@
+'fileTypes': [
+  'svg'
+]
+'foldingStartMarker': '^\\s*(<[^!?%/](?!.+?(/>|</.+?>))|<[!%]--(?!.+?--%?>)|<%[!]?(?!.+?%>))'
+'foldingStopMarker': '^\\s*(</[^>]+>|[/%]>|-->)\\s*$'
+'name': 'SVG'
+'patterns': [
+  {
+    'match': '\\b(if|while|for|return)\\b'
+    'name': 'keyword.control.untitled'
+  }
+  {
+    'begin': '"'
+    'end': '"'
+    'name': 'string.quoted.double.untitled'
+    'patterns': [
+      {
+        'match': '\\\\.'
+        'name': 'constant.character.escaped.untitled'
+      }
+    ]
+  }
+  {
+    'include': 'text.xml'
+  }
+  {
+    'begin': '(?:^\\s+)?<((?i:style))\\b(?![^>]*/>)'
+    'captures':
+      '1':
+        'name': 'entity.name.tag.style.svg'
+    'end': '</((?i:style))>(?:\\s*\\n)?'
+    'name': 'source.css.embedded.svg'
+    'patterns': [
+      {
+        'include': '#tag-stuff'
+      }
+      {
+        'begin': '>'
+        'end': '(?=</(?i:style))'
+        'patterns': [
+          {
+            'include': '#embedded-code'
+          }
+          {
+            'include': 'source.css'
+          }
+        ]
+      }
+    ]
+  }
+  {
+    'begin': '(?:^\\s+)?<((?i:script))\\b(?![^>]*/>)'
+    'captures':
+      '1':
+        'name': 'entity.name.tag.script.svg'
+    'end': '(?<=</(script))>(?:\\s*\\n)?'
+    'name': 'source.js.embedded.svg'
+    'patterns': [
+      {
+        'include': '#tag-stuff'
+      }
+      {
+        'begin': '(?<!</(?:script))>'
+        'end': '</((?i:script))'
+        'patterns': [
+          {
+            'include': 'source.js'
+          }
+        ]
+      }
+    ]
+  }
+  {
+    'begin': '(?:^\\s+)?<((?i:handler))\\b(?![^>]*/>)'
+    'captures':
+      '1':
+        'name': 'entity.name.tag.handler.svg'
+    'end': '(?<=</(script))>(?:\\s*\\n)?'
+    'name': 'source.js.embedded.svg'
+    'patterns': [
+      {
+        'include': '#tag-stuff'
+      }
+      {
+        'begin': '(?<!</(?:handler))>'
+        'end': '</((?i:handler))'
+        'patterns': [
+          {
+            'include': 'source.js'
+          }
+        ]
+      }
+    ]
+  }
+]
+'scopeName': 'text.xml.svg'
