@@ -49,20 +49,45 @@
     ]
   }
   {
-    'begin': '(?:^\\s+)?<((?i:script))\\b(?![^>]*/>)'
-    'captures':
+    'begin': '(?:^\\s+)?(<)((?i:script))\\b(?![^>]*/>)'
+    'beginCaptures':
       '1':
+        'name': 'punctuation.definition.tag.svg'
+      '2':
         'name': 'entity.name.tag.script.svg'
-    'end': '(?<=</(script))>(?:\\s*\\n)?'
+    'end': '(?<=</(script))(>)(?:\\s*\\n)?'
+    'endCaptures':
+      '2':
+        'name': 'punctuation.definition.tag.svg'
     'name': 'source.js.embedded.svg'
     'patterns': [
       {
         'include': '#tag-stuff'
       }
       {
-        'begin': '(?<!</(?:script))>'
-        'end': '</((?i:script))'
+        'begin': '(?<!</(?:script))(>)'
+        'captures':
+          '1':
+            'name': 'punctuation.definition.tag.svg'
+          '2':
+            'name': 'entity.name.tag.script.svg'
+        'end': '(</)((?i:script))'
         'patterns': [
+          {
+            'captures':
+              '1':
+                'name': 'punctuation.definition.comment.js'
+            'match': '(//).*?((?=</script)|$\\n?)'
+            'name': 'comment.line.double-slash.js'
+          }
+          {
+            'begin': '/\\*'
+            'captures':
+              '0':
+                'name': 'punctuation.definition.comment.js'
+            'end': '\\*/|(?=</script)'
+            'name': 'comment.block.js'
+          }
           {
             'include': 'source.js'
           }
@@ -71,20 +96,45 @@
     ]
   }
   {
-    'begin': '(?:^\\s+)?<((?i:handler))\\b(?![^>]*/>)'
-    'captures':
+    'begin': '(?:^\\s+)?(<)((?i:handler))\\b(?![^>]*/>)'
+    'beginCaptures':
       '1':
+        'name': 'punctuation.definition.tag.svg'
+      '2':
         'name': 'entity.name.tag.handler.svg'
-    'end': '(?<=</(script))>(?:\\s*\\n)?'
+    'end': '(?<=</(handler))(>)(?:\\s*\\n)?'
+    'endCaptures':
+      '2':
+        'name': 'punctuation.definition.tag.svg'
     'name': 'source.js.embedded.svg'
     'patterns': [
       {
         'include': '#tag-stuff'
       }
       {
-        'begin': '(?<!</(?:handler))>'
-        'end': '</((?i:handler))'
+        'begin': '(?<!</(?:handler))(>)'
+        'captures':
+          '1':
+            'name': 'punctuation.definition.tag.svg'
+          '2':
+            'name': 'entity.name.tag.handler.svg'
+        'end': '(</)((?i:handler))'
         'patterns': [
+          {
+            'captures':
+              '1':
+                'name': 'punctuation.definition.comment.js'
+            'match': '(//).*?((?=</handler)|$\\n?)'
+            'name': 'comment.line.double-slash.js'
+          }
+          {
+            'begin': '/\\*'
+            'captures':
+              '0':
+                'name': 'punctuation.definition.comment.js'
+            'end': '\\*/|(?=</handler)'
+            'name': 'comment.block.js'
+          }
           {
             'include': 'source.js'
           }
