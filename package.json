@@ -2,7 +2,7 @@
   "name": "language-svg",
   "version": "0.3.0",
   "description": "Atom language support for SVG",
-  "repository": "https://github.com/ed-ed/language-svg",
+  "repository": "https://github.com/erikdahlstrom/language-svg",
   "license": "MIT",
   "engines": {
     "atom": ">0.50.0"
