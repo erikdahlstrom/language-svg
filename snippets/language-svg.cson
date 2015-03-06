@@ -1,48 +1,48 @@
 '.text.xml.svg':
   'animate':
-    'prefix': 'animate'
+    'prefix': 'ani'
     'body': '<animate attributeName="$1" values="$2;$3" begin="$4" dur="$5s" fill="${6:freeze}" />'
   'animateMotion':
-    'prefix': 'animate'
+    'prefix': 'animo'
     'body': '<animateMotion begin="$1" dur="$2s" fill="${3:freeze}">\n  <mpath xlink:href="$4"/>\n</animateMotion>'
   'animateTransform':
-    'prefix': 'animate'
+    'prefix': 'anit'
     'body': '<animateTransform type="${1:scale}" values="$2;$3" begin="$4" dur="$5s" fill="${6:freeze}" additive="${7:sum}" />'
   'circle':
-    'prefix': 'circle'
+    'prefix': 'c'
     'body': '<circle cx="${1:0}" cy="${2:0}" r="${3:50}" fill="${4:#CC0F16}" />'
   'clipPath':
-    'prefix': 'clip'
+    'prefix': 'cl'
     'body': '<clipPath id="$1">\n  $2\n</clipPath>'
   'defs':
-    'prefix': 'defs'
+    'prefix': 'df'
     'body': '<defs>\n  $1\n</defs>'
   'desc':
-    'prefix': 'desc'
+    'prefix': 'de'
     'body': '<desc>$1</desc>'
   'ellipse':
-    'prefix': 'ellipse'
+    'prefix': 'e'
     'body': '<ellipse cx="${1:50}" cy="${2:50}" rx="${3:20}" ry="${4:30} fill="${5:#CC0F16}" />'
   'linearGradient':
-    'prefix': 'linear'
+    'prefix': 'lg'
     'body': '<linearGradient id="$1" x1="${2:0}" x2="${3:0}" y1="${4:0}" y2="${5:1}">\n  <stop offset="${6:0}" stop-color="$7" />\n  <stop offset="${8:1}" stop-color="$9" />\n</linearGradient>'
   'path':
-    'prefix': 'path'
+    'prefix': 'p'
     'body': '<path fill="$1" stroke="$2" stroke-width="1" \n      d="$3" />\n'
   'pattern':
-    'prefix': 'pattern'
+    'prefix': 'pa'
     'body': '<pattern id="$1" width="$2" height="$3">\n  $4\n</pattern>'
   'radialGradient':
-    'prefix': 'radial'
+    'prefix': 'rg'
     'body': '<radialGradient id="$1">\n  <stop offset="${2:0}" stop-color="$3" />\n  <stop offset="${4:1}" stop-color="$5" />\n</radialGradient>'
   'rect':
-    'prefix': 'rect'
+    'prefix': 'r'
     'body': '<rect x="${1:0}" y="${2:0}" width="${3:200}" height="${4:100}" fill="${5:#CC0F16}" />'
   'script (external)':
-    'prefix': 'script'
+    'prefix': 'sc'
     'body': '<script xlink:href="$1" />'
   'stop':
-    'prefix': 'stop'
+    'prefix': 'st'
     'body': '<stop offset="${1:0.5}" stop-color="$2" />'
   'svg':
     'prefix': 'svg'
@@ -51,7 +51,7 @@
     'prefix': 'text'
     'body': '<text x="$1" y="$2">$3</text>'
   'use':
-    'prefix': 'use'
+    'prefix': 'u'
     'body': '<use xlink:href="$1" x="$2" y="$3" />'
 '.text.xml.svg .meta.tag.xml':
   'onclick':
