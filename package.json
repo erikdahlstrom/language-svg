@@ -1,6 +1,6 @@
 {
   "name": "language-svg",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "Atom language support for SVG",
   "repository": "https://github.com/erikdahlstrom/language-svg",
   "license": "MIT",
