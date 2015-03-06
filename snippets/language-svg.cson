@@ -2,15 +2,27 @@
   'animate':
     'prefix': 'animate'
     'body': '<animate attributeName="$1" values="$2;$3" begin="$4" dur="$5s" fill="${6:freeze}" />'
-  'animateColor':
+  'animateMotion':
     'prefix': 'animate'
-    'body': '<animateColor attributeName="${1:fill}" values="$2;$3" begin="$4" dur="$5s" fill="${6:freeze}" />'
+    'body': '<animateMotion begin="$1" dur="$2s" fill="${3:freeze}">\n  <mpath xlink:href="$4"/>\n</animateMotion>'
   'animateTransform':
     'prefix': 'animate'
     'body': '<animateTransform type="${1:scale}" values="$2;$3" begin="$4" dur="$5s" fill="${6:freeze}" additive="${7:sum}" />'
   'circle':
     'prefix': 'circle'
-    'body': '<circle cx="${1:0}" cy="${2:0}" r="${3:50}" fill="${5:red}" />'
+    'body': '<circle cx="${1:0}" cy="${2:0}" r="${3:50}" fill="${4:#CC0F16}" />'
+  'clipPath':
+    'prefix': 'clip'
+    'body': '<clipPath id="$1">\n  $2\n</clipPath>'
+  'defs':
+    'prefix': 'defs'
+    'body': '<defs>\n  $1\n</defs>'
+  'desc':
+    'prefix': 'desc'
+    'body': '<desc>$1</desc>'
+  'ellipse':
+    'prefix': 'ellipse'
+    'body': '<ellipse cx="${1:50}" cy="${2:50}" rx="${3:20}" ry="${4:30} fill="${5:#CC0F16}" />'
   'linearGradient':
     'prefix': 'linear'
     'body': '<linearGradient id="$1" x1="${2:0}" x2="${3:0}" y1="${4:0}" y2="${5:1}">\n  <stop offset="${6:0}" stop-color="$7" />\n  <stop offset="${8:1}" stop-color="$9" />\n</linearGradient>'
@@ -25,7 +37,7 @@
     'body': '<radialGradient id="$1">\n  <stop offset="${2:0}" stop-color="$3" />\n  <stop offset="${4:1}" stop-color="$5" />\n</radialGradient>'
   'rect':
     'prefix': 'rect'
-    'body': '<rect x="${1:0}" y="${2:0}" width="${3:200}" height="${4:100}" fill="${5:red}" />'
+    'body': '<rect x="${1:0}" y="${2:0}" width="${3:200}" height="${4:100}" fill="${5:#CC0F16}" />'
   'script (external)':
     'prefix': 'script'
     'body': '<script xlink:href="$1" />'
