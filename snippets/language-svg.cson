@@ -53,6 +53,9 @@
   'use':
     'prefix': 'u'
     'body': '<use xlink:href="$1" x="$2" y="$3" />'
+  'entity':
+    'prefix': 'entity'
+    'body': '<!ENTITY $1 "$2">'
 '.text.xml.svg .meta.tag.xml':
   'onclick':
     'prefix': 'on'
