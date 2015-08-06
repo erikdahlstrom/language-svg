@@ -55,7 +55,14 @@
     'body': '<use xlink:href="$1" x="$2" y="$3" />'
   'group':
     'prefix': 'g'
-    'body': '<g $1>$2</g>' 
+    'body': '<g $1>$2</g>'
+    'description': 'Container for grouping together related graphics elements.'
+    'descriptionMoreURL': 'http://www.w3.org/TR/SVG/struct.html#Groups'
+  'shape-rendering':
+    'prefix': 'shape-rendering'
+    'body': 'shape-rendering="$1"'
+    'description': 'Values: default, optimize-speed, crisp-edges, geometric-precision'
+    'descriptionMoreURL': 'http://www.w3.org/1999/07/06/WD-SVG-19990706/render.html'
 '.text.xml.svg .meta.tag.xml':
   'onclick':
     'prefix': 'on'
