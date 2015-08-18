@@ -69,6 +69,11 @@
     'description': 'The opacity attribute specifies the transparency of an object or of a group of objects, that is, the degree to which the background behind the element is overlaid.'
     'descriptionMoreURL': 'http://www.w3.org/TR/SVG11/masking.html#OpacityProperty'
 '.text.xml.svg .meta.tag.xml':
+  'height':
+    'prefix': 'h'
+    'body': 'height="$1"'
+    'description': 'This attribute indicates a vertical length in the user coordinate system. The exact effect of this coordinate depends on each element. Most of the time, it represents the height of the rectangular region of the reference element (see each individual element\'s documentation for exceptions).'
+    'descriptionMoreURL': 'https://developer.mozilla.org/de/docs/Web/SVG/Attribute/height'
   'onclick':
     'prefix': 'on'
     'body': 'onclick="$1"'
@@ -114,3 +119,8 @@
   'matrix':
     'prefix': 'ma'
     'body': 'transform="matrix($1, $2, $3, $4, $5, $6)"'
+  'width':
+    'prefix': 'w'
+    'body': 'width="$1"'
+    'description': 'This attribute indicates an horizontal length in the user coordinate system. The exact effect of this coordinate depend on each element. Most of the time, it represents the width of the rectangular region of the reference element (see each individual element\'s documentation for exceptions).'
+    'descriptionMoreURL': 'https://developer.mozilla.org/de/docs/Web/SVG/Attribute/width'
