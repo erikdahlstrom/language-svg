@@ -1,19 +1,19 @@
 '.text.xml.svg':
   'animate':
     'prefix': 'ani'
-    'body': '<animate attributeName="$1" values="$2;$3" begin="$4" dur="$5s" fill="${6:freeze}" />'
-    'description': ''
-    'descriptionMoreURL': ''
+    'body': '<animate attributeName="$1" values="$2;$3" begin="$4" dur="$5s" fill="${6:freeze}" repeatCount="$7" />'
+    'description': 'The animate element is put inside a shape element and defines how an attribute of an element changes over the animation. The attribute will change from the initial value to the end value in the duration specified.'
+    'descriptionMoreURL': 'https://developer.mozilla.org/en-US/docs/Web/SVG/Element/animate'
   'animateMotion':
     'prefix': 'animo'
     'body': '<animateMotion begin="$1" dur="$2s" fill="${3:freeze}">\n  <mpath xlink:href="$4"/>\n</animateMotion>'
-    'description': ''
-    'descriptionMoreURL': ''
+    'description': 'The animateMotion element causes a referenced element to move along a motion path.'
+    'descriptionMoreURL': 'https://developer.mozilla.org/de/docs/Web/SVG/Element/animateMotion'
   'animateTransform':
     'prefix': 'anit'
     'body': '<animateTransform type="${1:scale}" values="$2;$3" begin="$4" dur="$5s" fill="${6:freeze}" additive="${7:sum}" />'
-    'description': ''
-    'descriptionMoreURL': ''
+    'description': 'The animateTransform element animates a transformation attribute on a target element, thereby allowing animations to control translation, scaling, rotation and/or skewing.'
+    'descriptionMoreURL': 'https://developer.mozilla.org/en/docs/Web/SVG/Element/animateTransform'
   'circle':
     'prefix': 'c'
     'body': '<circle cx="${1:0}" cy="${2:0}" r="${3:50}" fill="${4:#CC0F16}" />'
@@ -133,6 +133,8 @@
   'matrix':
     'prefix': 'ma'
     'body': 'transform="matrix($1, $2, $3, $4, $5, $6)"'
+    'description': ''
+    'descriptionMoreURL': ''
   'height':
     'prefix': 'h'
     'body': 'height="$1"'
@@ -141,42 +143,68 @@
   'onclick':
     'prefix': 'on'
     'body': 'onclick="$1"'
+    'description': ''
+    'descriptionMoreURL': ''
   'onfocusin':
     'prefix': 'on'
     'body': 'onfocusin="$1"'
+    'description': ''
+    'descriptionMoreURL': ''
   'onfocusout':
     'prefix': 'on'
     'body': 'onfocusout="$1"'
+    'description': ''
+    'descriptionMoreURL': ''
   'onload':
     'prefix': 'on'
     'body': 'onmouseout="$1"'
+    'description': ''
+    'descriptionMoreURL': ''
   'onmousedown':
     'prefix': 'on'
     'body': 'onmousedown="$1"'
+    'description': ''
+    'descriptionMoreURL': ''
   'onmousemove':
     'prefix': 'on'
     'body': 'onmousemove="$1"'
+    'description': ''
+    'descriptionMoreURL': ''
   'onmouseout':
     'prefix': 'on'
     'body': 'onmouseout="$1"'
+    'description': ''
+    'descriptionMoreURL': ''
   'onmouseover':
     'prefix': 'on'
     'body': 'onmouseover="$1"'
+    'description': ''
+    'descriptionMoreURL': ''
   'onmouseenter':
     'prefix': 'on'
     'body': 'onmouseenter="$1"'
+    'description': ''
+    'descriptionMoreURL': ''
   'onmouseleave':
     'prefix': 'on'
     'body': 'onmouseleave="$1"'
+    'description': ''
+    'descriptionMoreURL': ''
   'onmouseup':
     'prefix': 'on'
     'body': 'onmouseup="$1"'
+    'description': ''
+    'descriptionMoreURL': ''
   'rotate':
     'prefix': 'ro'
     'body': 'transform="rotate($1, $2)"'
+    'description': ''
+    'descriptionMoreURL': ''
   'scale':
     'prefix': 'sc'
     'body': 'transform="scale($1)"'
+    'description': ''
+    'descriptionMoreURL': ''
   'stroke':
     'prefix': 'stroke'
     'body': 'stroke="$1"'
@@ -200,6 +228,8 @@
   'translate':
     'prefix': 'tr'
     'body': 'transform="translate($1, $2)"'
+    'description': ''
+    'descriptionMoreURL': ''
   'width':
     'prefix': 'w'
     'body': 'width="$1"'
