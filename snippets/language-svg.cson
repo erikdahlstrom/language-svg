@@ -85,6 +85,11 @@
     'body': 'shape-rendering="$1"'
     'description': 'Values: default, optimize-speed, crisp-edges, geometric-precision'
     'descriptionMoreURL': 'http://www.w3.org/1999/07/06/WD-SVG-19990706/render.html'
+  'tspan':
+    'prefix': 'tspan'
+    'body': '<tspan x="$1" y="$2">$3</tspan>'
+    'description': 'Within a <text> element, text and font properties and the current text position can be adjusted with absolute or relative coordinate values by including a tspan element.'
+    'descriptionMoreURL': 'https://developer.mozilla.org/de/docs/Web/SVG/Element/tspan'
   'opacity':
     'prefix': 'opacity'
     'body': 'opacity="$1"'
