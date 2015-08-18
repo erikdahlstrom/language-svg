@@ -27,23 +27,23 @@
   'defs':
     'prefix': 'df'
     'body': '<defs>\n  $1\n</defs>'
-    'description': ''
-    'descriptionMoreURL': ''
+    'description': 'SVG allows graphical objects to be defined for later reuse. It is recommended that, wherever possible, referenced elements be defined inside of a defs element. Defining these elements inside of a defs element promotes understandability of the SVG content and thus promotes accessibility. Graphical elements defined in a defs will not be directly rendered. You can use a <use> element to render those elements wherever you want on the viewport.'
+    'descriptionMoreURL': 'https://developer.mozilla.org/de/docs/Web/SVG/Element/defs'
   'desc':
     'prefix': 'de'
     'body': '<desc>$1</desc>'
-    'description': ''
-    'descriptionMoreURL': ''
+    'description': 'Each container element or graphics element in an SVG drawing can supply a desc description string where the description is text-only. When the current SVG document fragment is rendered as SVG on visual media, desc elements are not rendered as part of the graphics. Alternate presentations are possible, both visual and aural, which display the desc element but do not display path elements or other graphics elements. The desc element generally improve accessibility of SVG documents'
+    'descriptionMoreURL': 'https://developer.mozilla.org/de/docs/Web/SVG/Element/desc'
   'ellipse':
     'prefix': 'e'
     'body': '<ellipse cx="${1:50}" cy="${2:50}" rx="${3:20}" ry="${4:30} fill="${5:#CC0F16}" />'
-    'description': ''
-    'descriptionMoreURL': ''
+    'description': 'The ellipse element is an SVG basic shape, used to create ellipses based on a center coordinate, and both their x and y radius. Ellipses are unable to specify the exact orientation of the ellipse (if, for example, you wanted to draw an ellipse tilted at a 45 degree angle), but can be rotated by using the transform attribute.'
+    'descriptionMoreURL': 'https://developer.mozilla.org/de/docs/Web/SVG/Element/ellipse'
   'entity':
     'prefix': 'entity'
     'body': '<!ENTITY $1 "$2">'
-    'description': ''
-    'descriptionMoreURL': ''
+    'description': 'Could be used to define global constants in the doctype, e.g. <!ENTITY size "100">. Use it as follows: width="&size;"'
+    'descriptionMoreURL': 'http://www.w3.org/TR/SVG/extend.html#PrivateElementsAndAttribute'
   'group':
     'prefix': 'g'
     'body': '<g $1>$2</g>'
@@ -77,8 +77,8 @@
   'pattern':
     'prefix': 'pa'
     'body': '<pattern id="$1" width="$2" height="$3">\n  $4\n</pattern>'
-    'description': ''
-    'descriptionMoreURL': ''
+    'description': 'A pattern is used to fill or stroke an object using a pre-defined graphic object which can be replicated ("tiled") at fixed intervals in x and y to cover the areas to be painted. Patterns are defined using the pattern element and then referenced by properties fill and stroke on a given graphics element to indicate that the given element shall be filled or stroked with the referenced pattern.'
+    'descriptionMoreURL': 'https://developer.mozilla.org/de/docs/Web/SVG/Element/pattern'
   'polygon':
     'prefix': 'polygon'
     'body': '<polygon points="$1,$2 $3,$4 $5,$6 $7,$8 $9,$10 $11,$12"/>'
@@ -97,13 +97,18 @@
   'rect':
     'prefix': 'r'
     'body': '<rect x="${1:0}" y="${2:0}" width="${3:200}" height="${4:100}" fill="${5:#CC0F16}" />'
-    'description': ''
-    'descriptionMoreURL': ''
+    'description': 'The rect element is an SVG basic shape, used to create rectangles based on the position of a corner and their width and height. It may also be used to create rectangles with rounded corners.'
+    'descriptionMoreURL': 'https://developer.mozilla.org/en/docs/Web/SVG/Element/rect'
   'script (external)':
     'prefix': 'sc'
     'body': '<script xlink:href="$1" />'
-    'description': ''
-    'descriptionMoreURL': ''
+    'description': 'A SVG script element is equivalent to the script element in HTML and thus is the place for scripts (e.g., ECMAScript). Any functions defined within any script element have a global scope across the entire current document.'
+    'descriptionMoreURL': 'https://developer.mozilla.org/de/docs/Web/SVG/Element/script'
+  'script (internal)':
+    'prefix': 'sci'
+    'body': '<script type="${1:text/javascript}">// <![CDATA[ $2 // ]]></script>'
+    'description': 'A SVG script element is equivalent to the script element in HTML and thus is the place for scripts (e.g., ECMAScript). Any functions defined within any script element have a global scope across the entire current document.'
+    'descriptionMoreURL': 'https://developer.mozilla.org/de/docs/Web/SVG/Element/script'
   'shape-rendering':
     'prefix': 'shape-rendering'
     'body': 'shape-rendering="$1"'
@@ -112,13 +117,13 @@
   'stop':
     'prefix': 'st'
     'body': '<stop offset="${1:0.5}" stop-color="$2" />'
-    'description': ''
-    'descriptionMoreURL': ''
+    'description': 'The ramp of colors to use on a gradient is defined by the stop elements that are child elements to either the <linearGradient> element or the <radialGradient> element.'
+    'descriptionMoreURL': 'https://developer.mozilla.org/de/docs/Web/SVG/Element/stop'
   'svg':
     'prefix': 'svg'
     'body': '<svg xmlns="http://www.w3.org/2000/svg"\n     xmlns:xlink="http://www.w3.org/1999/xlink"\n     width="${1:240}" height="${2:320}"\n     viewBox="0 0 $1 $2"\n     version="1.1">\n  <title>${3:Title here}</title>\n\n  <script><![CDATA[\n\n    // SVG script here\n\n  ]]></script>\n\n  $4\n</svg>'
-    'description': ''
-    'descriptionMoreURL': ''
+    'description': 'Scalable Vector Graphics (SVG) is an XML markup language for describing two-dimensional vector graphics. SVG is essentially to graphics what XHTML is to text.'
+    'descriptionMoreURL': 'https://developer.mozilla.org/en-US/docs/Web/SVG'
   'text':
     'prefix': 'text'
     'body': '<text x="$1" y="$2">$3</text>'
@@ -132,8 +137,8 @@
   'use':
     'prefix': 'u'
     'body': '<use xlink:href="$1" x="$2" y="$3" />'
-    'description': ''
-    'descriptionMoreURL': ''
+    'description': 'The use element takes nodes from within the SVG document, and duplicates them somewhere else. The effect is the same as if the nodes were deeply cloned into a non-exposed DOM, and then pasted where the use element is, much like cloned template elements in HTML5. Since the cloned nodes are not exposed, care must be taken when using CSS to style a use element and its hidden descendants. CSS attributes are not guaranteed to be inherited by the hidden, cloned DOM unless you explicitly request it using CSS inheritance. For security reasons, some browsers could apply a same-origin policy on use elements and could refuse to load a cross-origin URI within the xlink:href attribute.'
+    'descriptionMoreURL': 'https://developer.mozilla.org/de/docs/Web/SVG/Element/use'
 '.text.xml.svg .meta.tag.xml':
   'matrix':
     'prefix': 'ma'
