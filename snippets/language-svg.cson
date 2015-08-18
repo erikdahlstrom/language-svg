@@ -129,6 +129,11 @@
     'body': '<svg xmlns="http://www.w3.org/2000/svg"\n     xmlns:xlink="http://www.w3.org/1999/xlink"\n     width="${1:240}" height="${2:320}"\n     viewBox="0 0 $1 $2"\n     version="1.1">\n  <title>${3:Title here}</title>\n\n  <script><![CDATA[\n\n    // SVG script here\n\n  ]]></script>\n\n  $4\n</svg>'
     'description': 'Scalable Vector Graphics (SVG) is an XML markup language for describing two-dimensional vector graphics. SVG is essentially to graphics what XHTML is to text.'
     'descriptionMoreURL': 'https://developer.mozilla.org/en-US/docs/Web/SVG'
+  'symbol':
+    'prefix': 'symbol'
+    'body': '<symbol id="$1" viewBox="${1:0} ${2:0} ${3:150} ${4:110}">$5</symbol>'
+    'description': 'The symbol element is used to define graphical template objects which can be instantiated by a <use> element. The use of symbol elements for graphics that are used multiple times in the same document adds structure and semantics. Documents that are rich in structure may be rendered graphically, as speech, or as braille, and thus promote accessibility. note that a symbol element itself is not rendered. Only instances of a symbol element (i.e., a reference to a symbol by a <use> element) are rendered.'
+    'descriptionMoreURL': 'https://developer.mozilla.org/en-US/docs/Web/SVG/Element/symbol'
   'text':
     'prefix': 'text'
     'body': '<text x="$1" y="$2">$3</text>'
