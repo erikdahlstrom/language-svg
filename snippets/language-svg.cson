@@ -140,6 +140,26 @@
   'scale':
     'prefix': 'sc'
     'body': 'transform="scale($1)"'
+  'stroke':
+    'prefix': 'stroke'
+    'body': 'stroke="$1"'
+    'description': 'The stroke attribute defines the color of the outline on a given graphical element. The default value for the stroke attribute is none.'
+    'descriptionMoreURL': 'https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke'
+  'stroke-dasharray':
+    'prefix': 'stroke-dasharray'
+    'body': 'stroke-dasharray="$1,$2"'
+    'description': 'The stroke-dasharray attribute controls the pattern of dashes and gaps used to stroke paths.'
+    'descriptionMoreURL': 'https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke-dasharray'
+  'stroke-linecap':
+    'prefix': 'stroke-linecap'
+    'body': 'stroke-linecap="$1"'
+    'description': 'The stroke-linecap attribute specifies the shape to be used at the end of open subpaths when they are stroked.'
+    'descriptionMoreURL': 'https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke-linecap'
+  'stroke-width':
+    'prefix': 'stroke-width'
+    'body': 'stroke-width="$1"'
+    'description': 'The stroke-width attribute specifies the width of the outline on the current object. Its default value is 1. If a <percentage> is used, the value represents a percentage of the current viewport. If a value of 0 is used the outline will never be drawn.'
+    'descriptionMoreURL': 'https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke-width'
   'translate':
     'prefix': 'tr'
     'body': 'transform="translate($1, $2)"'
