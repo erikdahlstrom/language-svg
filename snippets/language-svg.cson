@@ -49,6 +49,11 @@
     'body': '<g $1>$2</g>'
     'description': 'Container for grouping together related graphics elements.'
     'descriptionMoreURL': 'http://www.w3.org/TR/SVG/struct.html#Groups'
+  'image':
+    'prefix': 'image'
+    'body': '<image xlink:href="$1" x="${2:0}" y="${3:0}" height="${4:100}" width="${5:100}" /> '
+    'description': 'The SVG Image Element (<image>) allows a raster image into be included in an SVG document.'
+    'descriptionMoreURL': 'https://developer.mozilla.org/en-US/docs/Web/SVG/Element/image'
   'line':
     'prefix': 'l'
     'body': ' <line x1="$1" y1="$2" x2="$3" y2="$4" stroke="$5" stroke-width="$6"/>'
