@@ -133,8 +133,8 @@
   'matrix':
     'prefix': 'ma'
     'body': 'transform="matrix($1, $2, $3, $4, $5, $6)"'
-    'description': ''
-    'descriptionMoreURL': ''
+    'description': 'This transform definition specifies a transformation in the form of a transformation matrix of six values.'
+    'descriptionMoreURL': 'https://developer.mozilla.org/de/docs/Web/SVG/Attribute/transform'
   'height':
     'prefix': 'h'
     'body': 'height="$1"'
@@ -198,13 +198,23 @@
   'rotate':
     'prefix': 'ro'
     'body': 'transform="rotate($1, $2)"'
-    'description': ''
-    'descriptionMoreURL': ''
+    'description': 'This transform definition specifies a rotation by a degrees about a given point. If optional parameters x and y are not supplied, the rotate is about the origin of the current user coordinate system. If optional parameters x and y are supplied, the rotate is about the point (x, y).'
+    'descriptionMoreURL': 'https://developer.mozilla.org/de/docs/Web/SVG/Attribute/transform'
   'scale':
     'prefix': 'sc'
     'body': 'transform="scale($1)"'
-    'description': ''
-    'descriptionMoreURL': ''
+    'description': 'This transform definition specifies a scale operation by x and y. If y is not provided, it is assumed to be equal to x.'
+    'descriptionMoreURL': 'https://developer.mozilla.org/de/docs/Web/SVG/Attribute/transform'
+  'skewX':
+    'prefix': 'skewx'
+    'body': 'transform="skewX($1)"'
+    'description': 'This transform definition specifies a skew transformation along the x axis by a degrees.'
+    'descriptionMoreURL': 'https://developer.mozilla.org/de/docs/Web/SVG/Attribute/transform'
+  'skewY':
+    'prefix': 'skewy'
+    'body': 'transform="skewY($1)"'
+    'description': 'This transform definition specifies a skew transformation along the y axis by a degrees.'
+    'descriptionMoreURL': 'https://developer.mozilla.org/de/docs/Web/SVG/Attribute/transform'
   'stroke':
     'prefix': 'stroke'
     'body': 'stroke="$1"'
@@ -228,8 +238,8 @@
   'translate':
     'prefix': 'tr'
     'body': 'transform="translate($1, $2)"'
-    'description': ''
-    'descriptionMoreURL': ''
+    'description': 'This transform definition specifies a scale operation by x and y. If y is not provided, it is assumed to be equal to x.'
+    'descriptionMoreURL': 'https://developer.mozilla.org/de/docs/Web/SVG/Attribute/transform'
   'width':
     'prefix': 'w'
     'body': 'width="$1"'
