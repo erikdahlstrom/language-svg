@@ -23,6 +23,11 @@
   'ellipse':
     'prefix': 'e'
     'body': '<ellipse cx="${1:50}" cy="${2:50}" rx="${3:20}" ry="${4:30} fill="${5:#CC0F16}" />'
+  'line':
+    'prefix': 'l'
+    'body': ' <line x1="$1" y1="$2" x2="$3" y2="$4" stroke="$5" stroke-width="$6"/>'
+    'description': 'The line element is an SVG basic shape, used to create a line connecting two points.'
+    'descriptionMoreURL': 'https://developer.mozilla.org/de/docs/Web/SVG/Element/line'
   'linearGradient':
     'prefix': 'lg'
     'body': '<linearGradient id="$1" x1="${2:0}" x2="${3:0}" y1="${4:0}" y2="${5:1}">\n  <stop offset="${6:0}" stop-color="$7" />\n  <stop offset="${8:1}" stop-color="$9" />\n</linearGradient>'
