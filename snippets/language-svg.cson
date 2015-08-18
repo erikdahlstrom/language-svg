@@ -17,13 +17,13 @@
   'circle':
     'prefix': 'c'
     'body': '<circle cx="${1:0}" cy="${2:0}" r="${3:50}" fill="${4:#CC0F16}" />'
-    'description': ''
-    'descriptionMoreURL': ''
+    'description': 'The circle element is an SVG basic shape, used to create circles based on a center point and a radius.'
+    'descriptionMoreURL': 'https://developer.mozilla.org/en-US/docs/Web/SVG/Element/circle'
   'clipPath':
     'prefix': 'cl'
     'body': '<clipPath id="$1">\n  $2\n</clipPath>'
-    'description': ''
-    'descriptionMoreURL': ''
+    'description': 'The clipping path restricts the region to which paint can be applied. Conceptually, any parts of the drawing that lie outside of the region bounded by the currently active clipping path are not drawn. A clipping path is defined with a clipPath element. A clipping path is used/referenced using the clip-path property. A clipping path is conceptually equivalent to a custom viewport for the referencing element. Thus, it affects the rendering of an element, but not the element\'s inherent geometry. The bounding box of a clipped element (meaning, an element which references a clipPath element via a clip-path property, or a child of the referencing element) must remain the same as if it were not clipped. By default, pointer-events must not be dispatched on the clipped (non-visible) regions of a shape. For example, a circle with a radius of 10 which is clipped to a circle with a radius of 5 will not receive "click" events outside the smaller radius.'
+    'descriptionMoreURL': 'https://developer.mozilla.org/de/docs/Web/SVG/Element/clipPath'
   'defs':
     'prefix': 'df'
     'body': '<defs>\n  $1\n</defs>'
@@ -59,6 +59,11 @@
     'body': '<linearGradient id="$1" x1="${2:0}" x2="${3:0}" y1="${4:0}" y2="${5:1}">\n  <stop offset="${6:0}" stop-color="$7" />\n  <stop offset="${8:1}" stop-color="$9" />\n</linearGradient>'
     'description': ''
     'descriptionMoreURL': ''
+  'mask':
+    'prefix': 'mask'
+    'body': '<mask id="$1" maskUnits="${2:userSpaceOnUse}" x="${3:0}" y="${4:0}" width="${5:200}" height="${6:80}">$7</mask>'
+    'description': 'In SVG, you can specify that any other graphics object or <g> element can be used as an alpha mask for compositing the current object into the background. A mask is defined with the mask element. A mask is used/referenced using the mask property.'
+    'descriptionMoreURL': 'https://developer.mozilla.org/en-US/docs/Web/SVG/Element/mask'
   'opacity':
     'prefix': 'opacity'
     'body': 'opacity="$1"'
