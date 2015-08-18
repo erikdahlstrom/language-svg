@@ -2,27 +2,53 @@
   'animate':
     'prefix': 'ani'
     'body': '<animate attributeName="$1" values="$2;$3" begin="$4" dur="$5s" fill="${6:freeze}" />'
+    'description': ''
+    'descriptionMoreURL': ''
   'animateMotion':
     'prefix': 'animo'
     'body': '<animateMotion begin="$1" dur="$2s" fill="${3:freeze}">\n  <mpath xlink:href="$4"/>\n</animateMotion>'
+    'description': ''
+    'descriptionMoreURL': ''
   'animateTransform':
     'prefix': 'anit'
     'body': '<animateTransform type="${1:scale}" values="$2;$3" begin="$4" dur="$5s" fill="${6:freeze}" additive="${7:sum}" />'
+    'description': ''
+    'descriptionMoreURL': ''
   'circle':
     'prefix': 'c'
     'body': '<circle cx="${1:0}" cy="${2:0}" r="${3:50}" fill="${4:#CC0F16}" />'
+    'description': ''
+    'descriptionMoreURL': ''
   'clipPath':
     'prefix': 'cl'
     'body': '<clipPath id="$1">\n  $2\n</clipPath>'
+    'description': ''
+    'descriptionMoreURL': ''
   'defs':
     'prefix': 'df'
     'body': '<defs>\n  $1\n</defs>'
+    'description': ''
+    'descriptionMoreURL': ''
   'desc':
     'prefix': 'de'
     'body': '<desc>$1</desc>'
+    'description': ''
+    'descriptionMoreURL': ''
   'ellipse':
     'prefix': 'e'
     'body': '<ellipse cx="${1:50}" cy="${2:50}" rx="${3:20}" ry="${4:30} fill="${5:#CC0F16}" />'
+    'description': ''
+    'descriptionMoreURL': ''
+  'entity':
+    'prefix': 'entity'
+    'body': '<!ENTITY $1 "$2">'
+    'description': ''
+    'descriptionMoreURL': ''
+  'group':
+    'prefix': 'g'
+    'body': '<g $1>$2</g>'
+    'description': 'Container for grouping together related graphics elements.'
+    'descriptionMoreURL': 'http://www.w3.org/TR/SVG/struct.html#Groups'
   'line':
     'prefix': 'l'
     'body': ' <line x1="$1" y1="$2" x2="$3" y2="$4" stroke="$5" stroke-width="$6"/>'
@@ -31,6 +57,13 @@
   'linearGradient':
     'prefix': 'lg'
     'body': '<linearGradient id="$1" x1="${2:0}" x2="${3:0}" y1="${4:0}" y2="${5:1}">\n  <stop offset="${6:0}" stop-color="$7" />\n  <stop offset="${8:1}" stop-color="$9" />\n</linearGradient>'
+    'description': ''
+    'descriptionMoreURL': ''
+  'opacity':
+    'prefix': 'opacity'
+    'body': 'opacity="$1"'
+    'description': 'The opacity attribute specifies the transparency of an object or of a group of objects, that is, the degree to which the background behind the element is overlaid.'
+    'descriptionMoreURL': 'http://www.w3.org/TR/SVG11/masking.html#OpacityProperty'
   'path':
     'prefix': 'p'
     'body': '<path fill="$1" stroke="$2" stroke-width="1" \n      d="$3" />\n'
@@ -39,6 +72,8 @@
   'pattern':
     'prefix': 'pa'
     'body': '<pattern id="$1" width="$2" height="$3">\n  $4\n</pattern>'
+    'description': ''
+    'descriptionMoreURL': ''
   'polygon':
     'prefix': 'polygon'
     'body': '<polygon points="$1,$2 $3,$4 $5,$6 $7,$8 $9,$10 $11,$12"/>'
@@ -52,50 +87,52 @@
   'radialGradient':
     'prefix': 'rg'
     'body': '<radialGradient id="$1">\n  <stop offset="${2:0}" stop-color="$3" />\n  <stop offset="${4:1}" stop-color="$5" />\n</radialGradient>'
+    'description': ''
+    'descriptionMoreURL': ''
   'rect':
     'prefix': 'r'
     'body': '<rect x="${1:0}" y="${2:0}" width="${3:200}" height="${4:100}" fill="${5:#CC0F16}" />'
+    'description': ''
+    'descriptionMoreURL': ''
   'script (external)':
     'prefix': 'sc'
     'body': '<script xlink:href="$1" />'
-  'stop':
-    'prefix': 'st'
-    'body': '<stop offset="${1:0.5}" stop-color="$2" />'
-  'svg':
-    'prefix': 'svg'
-    'body': '<svg xmlns="http://www.w3.org/2000/svg"\n     xmlns:xlink="http://www.w3.org/1999/xlink"\n     width="${1:240}" height="${2:320}"\n     viewBox="0 0 $1 $2"\n     version="1.1">\n  <title>${3:Title here}</title>\n\n  <script><![CDATA[\n\n    // SVG script here\n\n  ]]></script>\n\n  $4\n</svg>'
-  'text':
-    'prefix': 'text'
-    'body': '<text x="$1" y="$2">$3</text>'
-    'description': 'The text element defines a graphics element consisting of text. Note that it is possible to apply a gradient, pattern, clipping path, mask or filter to text'
-    'descriptionMoreURL': 'https://developer.mozilla.org/de/docs/Web/SVG/Element/text'
-  'use':
-    'prefix': 'u'
-    'body': '<use xlink:href="$1" x="$2" y="$3" />'
-  'entity':
-    'prefix': 'entity'
-    'body': '<!ENTITY $1 "$2">'
-  'group':
-    'prefix': 'g'
-    'body': '<g $1>$2</g>'
-    'description': 'Container for grouping together related graphics elements.'
-    'descriptionMoreURL': 'http://www.w3.org/TR/SVG/struct.html#Groups'
+    'description': ''
+    'descriptionMoreURL': ''
   'shape-rendering':
     'prefix': 'shape-rendering'
     'body': 'shape-rendering="$1"'
     'description': 'Values: default, optimize-speed, crisp-edges, geometric-precision'
     'descriptionMoreURL': 'http://www.w3.org/1999/07/06/WD-SVG-19990706/render.html'
+  'stop':
+    'prefix': 'st'
+    'body': '<stop offset="${1:0.5}" stop-color="$2" />'
+    'description': ''
+    'descriptionMoreURL': ''
+  'svg':
+    'prefix': 'svg'
+    'body': '<svg xmlns="http://www.w3.org/2000/svg"\n     xmlns:xlink="http://www.w3.org/1999/xlink"\n     width="${1:240}" height="${2:320}"\n     viewBox="0 0 $1 $2"\n     version="1.1">\n  <title>${3:Title here}</title>\n\n  <script><![CDATA[\n\n    // SVG script here\n\n  ]]></script>\n\n  $4\n</svg>'
+    'description': ''
+    'descriptionMoreURL': ''
+  'text':
+    'prefix': 'text'
+    'body': '<text x="$1" y="$2">$3</text>'
+    'description': 'The text element defines a graphics element consisting of text. Note that it is possible to apply a gradient, pattern, clipping path, mask or filter to text'
+    'descriptionMoreURL': 'https://developer.mozilla.org/de/docs/Web/SVG/Element/text'
   'tspan':
     'prefix': 'tspan'
     'body': '<tspan x="$1" y="$2">$3</tspan>'
     'description': 'Within a <text> element, text and font properties and the current text position can be adjusted with absolute or relative coordinate values by including a tspan element.'
     'descriptionMoreURL': 'https://developer.mozilla.org/de/docs/Web/SVG/Element/tspan'
-  'opacity':
-    'prefix': 'opacity'
-    'body': 'opacity="$1"'
-    'description': 'The opacity attribute specifies the transparency of an object or of a group of objects, that is, the degree to which the background behind the element is overlaid.'
-    'descriptionMoreURL': 'http://www.w3.org/TR/SVG11/masking.html#OpacityProperty'
+  'use':
+    'prefix': 'u'
+    'body': '<use xlink:href="$1" x="$2" y="$3" />'
+    'description': ''
+    'descriptionMoreURL': ''
 '.text.xml.svg .meta.tag.xml':
+  'matrix':
+    'prefix': 'ma'
+    'body': 'transform="matrix($1, $2, $3, $4, $5, $6)"'
   'height':
     'prefix': 'h'
     'body': 'height="$1"'
@@ -163,9 +200,6 @@
   'translate':
     'prefix': 'tr'
     'body': 'transform="translate($1, $2)"'
-  'matrix':
-    'prefix': 'ma'
-    'body': 'transform="matrix($1, $2, $3, $4, $5, $6)"'
   'width':
     'prefix': 'w'
     'body': 'width="$1"'
