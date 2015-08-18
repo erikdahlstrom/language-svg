@@ -37,6 +37,11 @@
   'pattern':
     'prefix': 'pa'
     'body': '<pattern id="$1" width="$2" height="$3">\n  $4\n</pattern>'
+  'polyline':
+    'prefix': 'polyline'
+    'body': '<polyline fill="$1" stroke="$2" points="$3,$4 $5,$6 $7,$8 $9,$10"/>'
+    'description': 'The polyline element is an SVG basic shape, used to create a series of straight lines connecting several points. Typically a polyline is used to create open shapes as the last point is not connected to the first point.'
+    'descriptionMoreURL': 'https://developer.mozilla.org/de/docs/Web/SVG/Element/polyline'
   'radialGradient':
     'prefix': 'rg'
     'body': '<radialGradient id="$1">\n  <stop offset="${2:0}" stop-color="$3" />\n  <stop offset="${4:1}" stop-color="$5" />\n</radialGradient>'
