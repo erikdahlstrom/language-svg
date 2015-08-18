@@ -154,6 +154,11 @@
     'body': '<text x="$1" y="$2">$3</text>'
     'description': 'The text element defines a graphics element consisting of text. Note that it is possible to apply a gradient, pattern, clipping path, mask or filter to text'
     'descriptionMoreURL': 'https://developer.mozilla.org/de/docs/Web/SVG/Element/text'
+  'title':
+    'prefix': 'title'
+    'body': '<title>$1</title>'
+    'description': 'Each container element or graphics element in an SVG drawing can supply a title description string where the description is text-only. When the current SVG document fragment is rendered as SVG on visual media, title element is not rendered as part of the graphics. However, some user agents may, for example, display the title element as a tooltip. Alternate presentations are possible, both visual and aural, which display the title element but do not display path elements or other graphics elements. The title element generally improve accessibility of SVG documents Generally title element should be the first child element of its parent. Note that those implementations that do use title to display a tooltip often will only do so if the title is indeed the first child element of its parent.'
+    'descriptionMoreURL': 'https://developer.mozilla.org/en-US/docs/Web/SVG/Element/title'
   'tspan':
     'prefix': 'tspan'
     'body': '<tspan x="$1" y="$2">$3</tspan>'
