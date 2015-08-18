@@ -124,6 +124,11 @@
     'body': '<stop offset="${1:0.5}" stop-color="$2" />'
     'description': 'The ramp of colors to use on a gradient is defined by the stop elements that are child elements to either the <linearGradient> element or the <radialGradient> element.'
     'descriptionMoreURL': 'https://developer.mozilla.org/de/docs/Web/SVG/Element/stop'
+  'style':
+    'prefix': 'style'
+    'body': '<style>/* <![CDATA[ */${1:circle} {fill: ${2:orange}; stroke: ${3:black}; stroke-width: ${4:10px};}/* ]]> */</style>'
+    'description': 'The style element allows style sheets to be embedded directly within SVG content. SVG\'s style element has the same attributes as the corresponding element in HTML (see HTML\'s <style> element).'
+    'descriptionMoreURL': 'https://developer.mozilla.org/en-US/docs/Web/SVG/Element/style'
   'svg':
     'prefix': 'svg'
     'body': '<svg xmlns="http://www.w3.org/2000/svg"\n     xmlns:xlink="http://www.w3.org/1999/xlink"\n     width="${1:240}" height="${2:320}"\n     viewBox="0 0 $1 $2"\n     version="1.1">\n  <title>${3:Title here}</title>\n\n  <script><![CDATA[\n\n    // SVG script here\n\n  ]]></script>\n\n  $4\n</svg>'
