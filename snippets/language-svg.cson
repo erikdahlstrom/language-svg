@@ -67,6 +67,8 @@
   'text':
     'prefix': 'text'
     'body': '<text x="$1" y="$2">$3</text>'
+    'description': 'The text element defines a graphics element consisting of text. Note that it is possible to apply a gradient, pattern, clipping path, mask or filter to text'
+    'descriptionMoreURL': 'https://developer.mozilla.org/de/docs/Web/SVG/Element/text'
   'use':
     'prefix': 'u'
     'body': '<use xlink:href="$1" x="$2" y="$3" />'
