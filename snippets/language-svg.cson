@@ -63,6 +63,11 @@
     'body': 'shape-rendering="$1"'
     'description': 'Values: default, optimize-speed, crisp-edges, geometric-precision'
     'descriptionMoreURL': 'http://www.w3.org/1999/07/06/WD-SVG-19990706/render.html'
+  'opacity':
+    'prefix': 'opacity'
+    'body': 'opacity="$1"'
+    'description': 'The opacity attribute specifies the transparency of an object or of a group of objects, that is, the degree to which the background behind the element is overlaid.'
+    'descriptionMoreURL': 'http://www.w3.org/TR/SVG11/masking.html#OpacityProperty'
 '.text.xml.svg .meta.tag.xml':
   'onclick':
     'prefix': 'on'
