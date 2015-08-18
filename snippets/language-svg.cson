@@ -49,6 +49,11 @@
     'body': '<filter id="$1" x="${2:0}" y="${3:0}">$4</filter>'
     'description': 'The filter element serves as container for atomic filter operations. It is never rendered directly. A filter is referenced by using the filter attribute on the target SVG element.'
     'descriptionMoreURL': 'https://developer.mozilla.org/en-US/docs/Web/SVG/Element/filter'
+  'feGaussianBlur':
+    'prefix': 'feGaussianBlur'
+    'body': '<feGaussianBlur in="${1:SourceGraphic}" stdDeviation="${1:5}" />'
+    'description': 'The filter blurs the input image by the amount specified in stdDeviation, which defines the bell-curve.'
+    'descriptionMoreURL': 'https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feGaussianBlur'
   'group':
     'prefix': 'g'
     'body': '<g $1>$2</g>'
