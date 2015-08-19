@@ -170,6 +170,16 @@
     'description': 'The use element takes nodes from within the SVG document, and duplicates them somewhere else. The effect is the same as if the nodes were deeply cloned into a non-exposed DOM, and then pasted where the use element is, much like cloned template elements in HTML5. Since the cloned nodes are not exposed, care must be taken when using CSS to style a use element and its hidden descendants. CSS attributes are not guaranteed to be inherited by the hidden, cloned DOM unless you explicitly request it using CSS inheritance. For security reasons, some browsers could apply a same-origin policy on use elements and could refuse to load a cross-origin URI within the xlink:href attribute.'
     'descriptionMoreURL': 'https://developer.mozilla.org/de/docs/Web/SVG/Element/use'
 '.text.xml.svg .meta.tag.xml':
+  'clip-path':
+    'prefix': 'clip-path'
+    'body': 'clip-path="url(#$1)"'
+    'description': 'The clip-path attribute bind the element is applied to with a given <clippath> element'
+    'descriptionMoreURL': 'https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/clip-path'
+  'mask':
+    'prefix': 'mask'
+    'body': 'mask="url(#$1)"'
+    'description': 'The mask attribute bind the element is applied to with a given <mask> element'
+    'descriptionMoreURL': 'https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/mask'
   'matrix':
     'prefix': 'ma'
     'body': 'transform="matrix($1, $2, $3, $4, $5, $6)"'
