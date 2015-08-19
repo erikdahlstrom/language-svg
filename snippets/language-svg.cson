@@ -24,6 +24,11 @@
     'body': '<clipPath id="$1">\n  $2\n</clipPath>'
     'description': 'The clipping path restricts the region to which paint can be applied. Conceptually, any parts of the drawing that lie outside of the region bounded by the currently active clipping path are not drawn. A clipping path is defined with a clipPath element. A clipping path is used/referenced using the clip-path property. A clipping path is conceptually equivalent to a custom viewport for the referencing element. Thus, it affects the rendering of an element, but not the element\'s inherent geometry. The bounding box of a clipped element (meaning, an element which references a clipPath element via a clip-path property, or a child of the referencing element) must remain the same as if it were not clipped. By default, pointer-events must not be dispatched on the clipped (non-visible) regions of a shape. For example, a circle with a radius of 10 which is clipped to a circle with a radius of 5 will not receive "click" events outside the smaller radius.'
     'descriptionMoreURL': 'https://developer.mozilla.org/de/docs/Web/SVG/Element/clipPath'
+  'color-interpolation-filters':
+    'prefix': 'color-interpolation-filters'
+    'body': 'color-interpolation-filters="${1:sRGB}"'
+    'description': 'The color-interpolation-filters attribute specifies the color space for imaging operations performed via filter effects. Note that color-interpolation-filters has a different initial value than color-interpolation. color-interpolation-filters has an initial value of linearRGB, whereas color-interpolation has an initial value of sRGB. Thus, in the default case, filter effects operations occur in the linearRGB color space, whereas all other color interpolations occur by default in the sRGB color space.'
+    'descriptionMoreURL': 'https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/color-interpolation-filters'
   'defs':
     'prefix': 'df'
     'body': '<defs>\n  $1\n</defs>'
@@ -44,16 +49,16 @@
     'body': '<!ENTITY $1 "$2">'
     'description': 'Could be used to define global constants in the doctype, e.g. <!ENTITY size "100">. Use it as follows: width="&size;"'
     'descriptionMoreURL': 'http://www.w3.org/TR/SVG/extend.html#PrivateElementsAndAttribute'
-  'filter':
-    'prefix': 'filter'
-    'body': '<filter id="$1" x="${2:0}" y="${3:0}">$4</filter>'
-    'description': 'The filter element serves as container for atomic filter operations. It is never rendered directly. A filter is referenced by using the filter attribute on the target SVG element.'
-    'descriptionMoreURL': 'https://developer.mozilla.org/en-US/docs/Web/SVG/Element/filter'
   'feGaussianBlur':
     'prefix': 'feGaussianBlur'
     'body': '<feGaussianBlur in="${1:SourceGraphic}" stdDeviation="${1:5}" />'
     'description': 'The filter blurs the input image by the amount specified in stdDeviation, which defines the bell-curve.'
     'descriptionMoreURL': 'https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feGaussianBlur'
+  'filter':
+    'prefix': 'filter'
+    'body': '<filter id="$1" x="${2:0}" y="${3:0}">$4</filter>'
+    'description': 'The filter element serves as container for atomic filter operations. It is never rendered directly. A filter is referenced by using the filter attribute on the target SVG element.'
+    'descriptionMoreURL': 'https://developer.mozilla.org/en-US/docs/Web/SVG/Element/filter'
   'group':
     'prefix': 'g'
     'body': '<g $1>$2</g>'
