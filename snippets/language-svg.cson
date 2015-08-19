@@ -79,11 +79,6 @@
     'body': '<mask id="$1" maskUnits="${2:userSpaceOnUse}" x="${3:0}" y="${4:0}" width="${5:200}" height="${6:80}">$7</mask>'
     'description': 'In SVG, you can specify that any other graphics object or <g> element can be used as an alpha mask for compositing the current object into the background. A mask is defined with the mask element. A mask is used/referenced using the mask property.'
     'descriptionMoreURL': 'https://developer.mozilla.org/en-US/docs/Web/SVG/Element/mask'
-  'opacity':
-    'prefix': 'opacity'
-    'body': 'opacity="$1"'
-    'description': 'The opacity attribute specifies the transparency of an object or of a group of objects, that is, the degree to which the background behind the element is overlaid.'
-    'descriptionMoreURL': 'http://www.w3.org/TR/SVG11/masking.html#OpacityProperty'
   'path':
     'prefix': 'p'
     'body': '<path fill="$1" stroke="$2" stroke-width="1" \n      d="$3" />\n'
@@ -245,6 +240,11 @@
     'body': 'onmouseup="$1"'
     'description': ''
     'descriptionMoreURL': ''
+  'opacity':
+    'prefix': 'opacity'
+    'body': 'opacity="$1"'
+    'description': 'The opacity attribute specifies the transparency of an object or of a group of objects, that is, the degree to which the background behind the element is overlaid.'
+    'descriptionMoreURL': 'https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/opacity'
   'preserveAspectRatio':
     'prefix': 'preserveAspectRatio'
     'body': 'preserveAspectRatio="${1:xMidYMid slice}"'
