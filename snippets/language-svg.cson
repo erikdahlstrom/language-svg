@@ -119,11 +119,6 @@
     'body': '<script type="${1:text/javascript}">// <![CDATA[ $2 // ]]></script>'
     'description': 'A SVG script element is equivalent to the script element in HTML and thus is the place for scripts (e.g., ECMAScript). Any functions defined within any script element have a global scope across the entire current document.'
     'descriptionMoreURL': 'https://developer.mozilla.org/de/docs/Web/SVG/Element/script'
-  'shape-rendering':
-    'prefix': 'shape-rendering'
-    'body': 'shape-rendering="$1"'
-    'description': 'Values: default, optimize-speed, crisp-edges, geometric-precision'
-    'descriptionMoreURL': 'http://www.w3.org/1999/07/06/WD-SVG-19990706/render.html'
   'stop':
     'prefix': 'st'
     'body': '<stop offset="${1:0.5}" stop-color="$2" />'
@@ -185,6 +180,11 @@
     'body': 'height="$1"'
     'description': 'This attribute indicates a vertical length in the user coordinate system. The exact effect of this coordinate depends on each element. Most of the time, it represents the height of the rectangular region of the reference element (see each individual element\'s documentation for exceptions).'
     'descriptionMoreURL': 'https://developer.mozilla.org/de/docs/Web/SVG/Attribute/height'
+  'image-rendering':
+    'prefix': 'image-rendering'
+    'body': 'image-rendering="${1:auto}"'
+    'description': 'The image-rendering attribute provides a hint to the browser about how to make speed vs. quality tradeoffs as it performs image processing.'
+    'descriptionMoreURL': 'https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/image-rendering'
   'onclick':
     'prefix': 'on'
     'body': 'onclick="$1"'
@@ -260,6 +260,11 @@
     'body': 'transform="scale($1)"'
     'description': 'This transform definition specifies a scale operation by x and y. If y is not provided, it is assumed to be equal to x.'
     'descriptionMoreURL': 'https://developer.mozilla.org/de/docs/Web/SVG/Attribute/transform'
+  'shape-rendering':
+    'prefix': 'shape-rendering'
+    'body': 'shape-rendering="${1:auto}"'
+    'description': 'The creator of SVG content might want to provide a hint about what tradeoffs to make as the browser renders <path> element or basic shapes. The shape-rendering attribute provides these hints.'
+    'descriptionMoreURL': 'https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/shape-rendering'
   'skewX':
     'prefix': 'skewx'
     'body': 'transform="skewX($1)"'
@@ -290,6 +295,11 @@
     'body': 'stroke-width="$1"'
     'description': 'The stroke-width attribute specifies the width of the outline on the current object. Its default value is 1. If a <percentage> is used, the value represents a percentage of the current viewport. If a value of 0 is used the outline will never be drawn.'
     'descriptionMoreURL': 'https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke-width'
+  'text-rendering':
+    'prefix': 'text-rendering'
+    'body': 'text-rendering="${1:auto}"'
+    'description': 'The creator of SVG content might want to provide a hint about what tradeoffs to make as the browser renders text. The text-rendering attribute provides these hints.'
+    'descriptionMoreURL': 'https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/text-rendering'
   'translate':
     'prefix': 'tr'
     'body': 'transform="translate($1, $2)"'
