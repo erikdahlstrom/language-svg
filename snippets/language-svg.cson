@@ -41,9 +41,9 @@
     'descriptionMoreURL': 'https://developer.mozilla.org/de/docs/Web/SVG/Element/ellipse'
   'feColorMatrix':
     'prefix': 'feColorMatrix'
-    'body': '<feColorMatrix in="${1:SourceGraphic}" type="${2:saturate}" values="${3:0.2}" />'
+    'body': '<feColorMatrix type="${1:saturate}" values="${2:0.2}" />'
     'description': 'This filter changes colors based on a transformation matrix. Every pixel\'s color value (represented by an [R,G,B,A] vector) is matrix multiplied to create a new color.'
-    'descriptionMoreURL': 'https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feColorMatrix'
+    'descriptionMoreURL': 'http://www.w3.org/TR/SVG/filters.html#feColorMatrixElement'
   'feComposite':
     'prefix': 'feComposite'
     'body': '<feComposite in="${1:SourceGraphic}" in2="${2:light}" operator="${3:arithmetic}" k1="${4:1}" k2="${5:0}" k3="${6:0}" k4="${7:0}"/>'
