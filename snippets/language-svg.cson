@@ -76,7 +76,7 @@
     'descriptionMoreURL': 'https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feSpotLight'
   'filter':
     'prefix': 'filter'
-    'body': '<filter id="$1" x="${2:0}" y="${3:0}">$4</filter>'
+    'body': '<filter id="$1" x="${2:0}" y="${3:0} width="${4:1} height="${5:1}">$6</filter>'
     'description': 'The filter element serves as container for atomic filter operations. It is never rendered directly. A filter is referenced by using the filter attribute on the target SVG element.'
     'descriptionMoreURL': 'https://developer.mozilla.org/en-US/docs/Web/SVG/Element/filter'
   'group':
