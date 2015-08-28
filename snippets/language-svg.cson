@@ -111,7 +111,7 @@
     'descriptionMoreURL': 'https://developer.mozilla.org/en-US/docs/Web/SVG/Element/mask'
   'path':
     'prefix': 'p'
-    'body': '<path fill="$1" stroke="$2" stroke-width="1" \n      d="$3" />\n'
+    'body': '<path d="$1" />\n'
     'description': 'The path element is the generic element to define a shape. All the basic shapes can be created with a path element.'
     'descriptionMoreURL': 'https://developer.mozilla.org/de/docs/Web/SVG/Element/path'
   'pattern':
