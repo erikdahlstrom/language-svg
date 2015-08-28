@@ -217,7 +217,7 @@
     'descriptionMoreURL': 'https://developer.mozilla.org/de/docs/Web/SVG/Attribute/height'
   'image-rendering':
     'prefix': 'image-rendering'
-    'body': 'image-rendering="${1:auto}"'
+    'body': 'image-rendering="${1:pixelated}"'
     'description': 'The image-rendering attribute provides a hint to the browser about how to make speed vs. quality tradeoffs as it performs image processing.'
     'descriptionMoreURL': 'https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/image-rendering'
   'onclick':
