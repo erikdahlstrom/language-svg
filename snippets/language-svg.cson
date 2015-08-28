@@ -332,7 +332,7 @@
     'descriptionMoreURL': 'https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke-width'
   'text-rendering':
     'prefix': 'text-rendering'
-    'body': 'text-rendering="${1:auto}"'
+    'body': 'text-rendering="${1:geometricPrecision}"'
     'description': 'The creator of SVG content might want to provide a hint about what tradeoffs to make as the browser renders text. The text-rendering attribute provides these hints.'
     'descriptionMoreURL': 'https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/text-rendering'
   'translate':
