@@ -146,7 +146,7 @@
     'descriptionMoreURL': 'https://developer.mozilla.org/de/docs/Web/SVG/Element/script'
   'script (internal)':
     'prefix': 'sci'
-    'body': '<script type="${1:text/javascript}">// <![CDATA[ $2 // ]]></script>'
+    'body': '<script>// <![CDATA[ $2 // ]]></script>'
     'description': 'A SVG script element is equivalent to the script element in HTML and thus is the place for scripts (e.g., ECMAScript). Any functions defined within any script element have a global scope across the entire current document.'
     'descriptionMoreURL': 'https://developer.mozilla.org/de/docs/Web/SVG/Element/script'
   'stop':
