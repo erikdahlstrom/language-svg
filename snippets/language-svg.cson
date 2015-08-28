@@ -281,7 +281,7 @@
     'description': 'The opacity attribute specifies the transparency of an object or of a group of objects, that is, the degree to which the background behind the element is overlaid.'
     'descriptionMoreURL': 'https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/opacity'
   'preserveAspectRatio':
-    'prefix': 'preserveAspectRatio'
+    'prefix': 'par'
     'body': 'preserveAspectRatio="${1:xMidYMid slice}"'
     'description': 'In some cases, typically when using the viewBox attribute, it is desirable that the graphics stretch to fit non-uniformly to take up the entire viewport. In other cases, it is desirable that uniform scaling be used for the purposes of preserving the aspect ratio of the graphics. Attribute preserveAspectRatio indicates whether or not to force uniform scaling. For all elements that support that attribute (see above), except for the <image> element, preserveAspectRatio only applies when a value has been provided for viewBox on the same element. For these elements, if attribute viewBox is not provided, then preserveAspectRatio is ignored. For <image> elements, preserveAspectRatio indicates how referenced images should be fitted with respect to the reference rectangle and whether the aspect ratio of the referenced image should be preserved with respect to the current user coordinate system.'
     'descriptionMoreURL': 'https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/preserveAspectRatio'
