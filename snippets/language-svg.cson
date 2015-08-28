@@ -121,12 +121,12 @@
     'descriptionMoreURL': 'https://developer.mozilla.org/de/docs/Web/SVG/Element/pattern'
   'polygon':
     'prefix': 'polygon'
-    'body': '<polygon points="$1,$2 $3,$4 $5,$6 $7,$8 $9,$10 $11,$12"/>'
+    'body': '<polygon points="$1"/>'
     'description': 'The polygon element defines a closed shape consisting of a set of connected straight line segments. The last point is connected to the first point.'
     'descriptionMoreURL': 'https://developer.mozilla.org/de/docs/Web/SVG/Element/polygon'
   'polyline':
     'prefix': 'polyline'
-    'body': '<polyline fill="$1" stroke="$2" points="$3,$4 $5,$6 $7,$8 $9,$10"/>'
+    'body': '<polyline fill="$1" stroke="$2" points="$3"/>'
     'description': 'The polyline element is an SVG basic shape, used to create a series of straight lines connecting several points. Typically a polyline is used to create open shapes as the last point is not connected to the first point.'
     'descriptionMoreURL': 'https://developer.mozilla.org/de/docs/Web/SVG/Element/polyline'
   'radialGradient':
