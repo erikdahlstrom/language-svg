@@ -51,7 +51,7 @@
     'descriptionMoreURL': 'https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feComposite'
   'feDiffuseLighting':
     'prefix': 'feDiffuseLighting'
-    'body': '<feDiffuseLighting in="${1:SourceGraphic}" result="${2:light}" lighting-color="${3:white}"><fePointLight x="$4" y="$5" z="$6" /></feDiffuseLighting>'
+    'body': '<feDiffuseLighting in="${1:SourceGraphic}" result="$2" lighting-color="${3:white}"><fePointLight x="$4" y="$5" z="$6" /></feDiffuseLighting>'
     'description': 'This filter primitive lights an image using the alpha channel as a bump map. The resulting image, which is an RGBA opaque image, depends on the light color, light position and surface geometry of the input bump map. The light map produced by this filter primitive can be combined with a texture image using the multiply term of the arithmetic operator of the <fecomposite> filter primitive. Multiple light sources can be simulated by adding several of these light maps together before applying it to the texture image.'
     'descriptionMoreURL': 'https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feDiffuseLighting'
   'feDistantLight':
