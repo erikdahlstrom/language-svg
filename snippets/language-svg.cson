@@ -297,7 +297,7 @@
     'descriptionMoreURL': 'https://developer.mozilla.org/de/docs/Web/SVG/Attribute/transform'
   'shape-rendering':
     'prefix': 'shape-rendering'
-    'body': 'shape-rendering="${1:auto}"'
+    'body': 'shape-rendering="${1:crispEdges}"'
     'description': 'The creator of SVG content might want to provide a hint about what tradeoffs to make as the browser renders <path> element or basic shapes. The shape-rendering attribute provides these hints.'
     'descriptionMoreURL': 'https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/shape-rendering'
   'skewX':
