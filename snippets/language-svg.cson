@@ -46,7 +46,7 @@
     'descriptionMoreURL': 'http://www.w3.org/TR/SVG/filters.html#feColorMatrixElement'
   'feComposite':
     'prefix': 'feComposite'
-    'body': '<feComposite in="${1:SourceGraphic}" in2="${2:light}" operator="${3:arithmetic}" k1="${4:1}" k2="${5:0}" k3="${6:0}" k4="${7:0}"/>'
+    'body': '<feComposite in2="${1:SourceGraphic}" operator="${2:arithmetic}" k1="${3:1}" k2="${4:0}" k3="${5:0}" k4="${6:0}"/>'
     'description': 'This filter primitive performs the combination of two input images pixel-wise in image space using one of the Porter-Duff compositing operations: over, in, atop, out, xor. Additionally, a component-wise arithmetic operation (with the result clamped between [0..1]) can be applied.'
     'descriptionMoreURL': 'https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feComposite'
   'feDiffuseLighting':
