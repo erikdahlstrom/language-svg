@@ -1,101 +1,352 @@
 '.text.xml.svg':
   'animate':
     'prefix': 'ani'
-    'body': '<animate attributeName="$1" values="$2;$3" begin="$4" dur="$5s" fill="${6:freeze}" />'
+    'body': '<animate attributeName="$1" values="$2;$3" begin="$4" dur="$5s" fill="${6:freeze}" repeatCount="$7" />'
+    'description': 'The animate element is put inside a shape element and defines how an attribute of an element changes over the animation. The attribute will change from the initial value to the end value in the duration specified.'
+    'descriptionMoreURL': 'https://developer.mozilla.org/en-US/docs/Web/SVG/Element/animate'
   'animateMotion':
     'prefix': 'animo'
     'body': '<animateMotion begin="$1" dur="$2s" fill="${3:freeze}">\n  <mpath xlink:href="$4"/>\n</animateMotion>'
+    'description': 'The animateMotion element causes a referenced element to move along a motion path.'
+    'descriptionMoreURL': 'https://developer.mozilla.org/de/docs/Web/SVG/Element/animateMotion'
   'animateTransform':
     'prefix': 'anit'
     'body': '<animateTransform type="${1:scale}" values="$2;$3" begin="$4" dur="$5s" fill="${6:freeze}" additive="${7:sum}" />'
+    'description': 'The animateTransform element animates a transformation attribute on a target element, thereby allowing animations to control translation, scaling, rotation and/or skewing.'
+    'descriptionMoreURL': 'https://developer.mozilla.org/en/docs/Web/SVG/Element/animateTransform'
   'circle':
     'prefix': 'c'
     'body': '<circle cx="${1:0}" cy="${2:0}" r="${3:50}" fill="${4:#CC0F16}" />'
+    'description': 'The circle element is an SVG basic shape, used to create circles based on a center point and a radius.'
+    'descriptionMoreURL': 'https://developer.mozilla.org/en-US/docs/Web/SVG/Element/circle'
   'clipPath':
     'prefix': 'cl'
     'body': '<clipPath id="$1">\n  $2\n</clipPath>'
+    'description': 'The clipping path restricts the region to which paint can be applied. Conceptually, any parts of the drawing that lie outside of the region bounded by the currently active clipping path are not drawn. A clipping path is defined with a clipPath element. A clipping path is used/referenced using the clip-path property. A clipping path is conceptually equivalent to a custom viewport for the referencing element. Thus, it affects the rendering of an element, but not the element\'s inherent geometry. The bounding box of a clipped element (meaning, an element which references a clipPath element via a clip-path property, or a child of the referencing element) must remain the same as if it were not clipped. By default, pointer-events must not be dispatched on the clipped (non-visible) regions of a shape. For example, a circle with a radius of 10 which is clipped to a circle with a radius of 5 will not receive "click" events outside the smaller radius.'
+    'descriptionMoreURL': 'https://developer.mozilla.org/de/docs/Web/SVG/Element/clipPath'
   'defs':
     'prefix': 'df'
     'body': '<defs>\n  $1\n</defs>'
+    'description': 'SVG allows graphical objects to be defined for later reuse. It is recommended that, wherever possible, referenced elements be defined inside of a defs element. Defining these elements inside of a defs element promotes understandability of the SVG content and thus promotes accessibility. Graphical elements defined in a defs will not be directly rendered. You can use a <use> element to render those elements wherever you want on the viewport.'
+    'descriptionMoreURL': 'https://developer.mozilla.org/de/docs/Web/SVG/Element/defs'
   'desc':
     'prefix': 'de'
     'body': '<desc>$1</desc>'
+    'description': 'Each container element or graphics element in an SVG drawing can supply a desc description string where the description is text-only. When the current SVG document fragment is rendered as SVG on visual media, desc elements are not rendered as part of the graphics. Alternate presentations are possible, both visual and aural, which display the desc element but do not display path elements or other graphics elements. The desc element generally improve accessibility of SVG documents'
+    'descriptionMoreURL': 'https://developer.mozilla.org/de/docs/Web/SVG/Element/desc'
   'ellipse':
     'prefix': 'e'
     'body': '<ellipse cx="${1:50}" cy="${2:50}" rx="${3:20}" ry="${4:30} fill="${5:#CC0F16}" />'
+    'description': 'The ellipse element is an SVG basic shape, used to create ellipses based on a center coordinate, and both their x and y radius. Ellipses are unable to specify the exact orientation of the ellipse (if, for example, you wanted to draw an ellipse tilted at a 45 degree angle), but can be rotated by using the transform attribute.'
+    'descriptionMoreURL': 'https://developer.mozilla.org/de/docs/Web/SVG/Element/ellipse'
+  'feColorMatrix':
+    'prefix': 'feColorMatrix'
+    'body': '<feColorMatrix type="${1:saturate}" values="${2:0.2}" />'
+    'description': 'This filter changes colors based on a transformation matrix. Every pixel\'s color value (represented by an [R,G,B,A] vector) is matrix multiplied to create a new color.'
+    'descriptionMoreURL': 'http://www.w3.org/TR/SVG/filters.html#feColorMatrixElement'
+  'feComposite':
+    'prefix': 'feComposite'
+    'body': '<feComposite in2="${1:SourceGraphic}" operator="${2:arithmetic}" k1="${3:1}" k2="${4:0}" k3="${5:0}" k4="${6:0}"/>'
+    'description': 'This filter primitive performs the combination of two input images pixel-wise in image space using one of the Porter-Duff compositing operations: over, in, atop, out, xor. Additionally, a component-wise arithmetic operation (with the result clamped between [0..1]) can be applied.'
+    'descriptionMoreURL': 'https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feComposite'
+  'feDiffuseLighting':
+    'prefix': 'feDiffuseLighting'
+    'body': '<feDiffuseLighting in="${1:SourceGraphic}" result="$2" lighting-color="${3:white}"><fePointLight x="$4" y="$5" z="$6" /></feDiffuseLighting>'
+    'description': 'This filter primitive lights an image using the alpha channel as a bump map. The resulting image, which is an RGBA opaque image, depends on the light color, light position and surface geometry of the input bump map. The light map produced by this filter primitive can be combined with a texture image using the multiply term of the arithmetic operator of the <fecomposite> filter primitive. Multiple light sources can be simulated by adding several of these light maps together before applying it to the texture image.'
+    'descriptionMoreURL': 'https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feDiffuseLighting'
+  'feDistantLight':
+    'prefix': 'feDistantLight'
+    'body': '<feDistantLight azimuth="${1:240}" elevation="${2:20}"/>'
+    'description': 'This filter primitive define a distant light source that can be used within a lighting filter primitive : <fediffuselighting> or <fespecularlighting>.'
+    'descriptionMoreURL': 'https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feDistantLight'
+  'feGaussianBlur':
+    'prefix': 'feGaussianBlur'
+    'body': '<feGaussianBlur in="${1:SourceGraphic}" stdDeviation="${1:5}" />'
+    'description': 'The filter blurs the input image by the amount specified in stdDeviation, which defines the bell-curve.'
+    'descriptionMoreURL': 'https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feGaussianBlur'
+  'fePointLight':
+    'prefix': 'fePointLight'
+    'body': '<fePointLight x="$1" y="$2" z="$3" />'
+    'description': ''
+    'descriptionMoreURL': 'https://developer.mozilla.org/en-US/docs/Web/SVG/Element/fePointLight'
+  'feSpotLight':
+    'prefix': 'feSpotLight'
+    'body': '<feSpotLight x="${1:360}" y="${2:5}" z="${3:30}" limitingConeAngle="${4:20}" pointsAtX="${5:390}" pointsAtY="${6:80}" pointsAtZ="${7:0}"/>'
+    'description': 'The feSpotLight element is one of the ligth source elements used for SVG files.'
+    'descriptionMoreURL': 'https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feSpotLight'
+  'filter':
+    'prefix': 'filter'
+    'body': '<filter id="$1" x="${2:0}" y="${3:0} width="${4:1} height="${5:1}">$6</filter>'
+    'description': 'The filter element serves as container for atomic filter operations. It is never rendered directly. A filter is referenced by using the filter attribute on the target SVG element.'
+    'descriptionMoreURL': 'https://developer.mozilla.org/en-US/docs/Web/SVG/Element/filter'
+  'group':
+    'prefix': 'g'
+    'body': '<g $1>$2</g>'
+    'description': 'Container for grouping together related graphics elements.'
+    'descriptionMoreURL': 'http://www.w3.org/TR/SVG/struct.html#Groups'
+  'hyperlink':
+    'prefix': 'a'
+    'body': '  <a xlink:href="$1" target="${2:_blank}">$3</a>'
+    'description': 'The SVG Anchor Element (<a>) defines a hyperlink'
+    'descriptionMoreURL': 'https://developer.mozilla.org/en-US/docs/Web/SVG/Element/a'
+  'image':
+    'prefix': 'image'
+    'body': '<image xlink:href="$1" x="${2:0}" y="${3:0}" height="${4:100}" width="${5:100}" /> '
+    'description': 'The SVG Image Element (<image>) allows a raster image into be included in an SVG document.'
+    'descriptionMoreURL': 'https://developer.mozilla.org/en-US/docs/Web/SVG/Element/image'
+  'line':
+    'prefix': 'l'
+    'body': ' <line x1="$1" y1="$2" x2="$3" y2="$4" stroke="$5" stroke-width="$6"/>'
+    'description': 'The line element is an SVG basic shape, used to create a line connecting two points.'
+    'descriptionMoreURL': 'https://developer.mozilla.org/de/docs/Web/SVG/Element/line'
   'linearGradient':
     'prefix': 'lg'
     'body': '<linearGradient id="$1" x1="${2:0}" x2="${3:0}" y1="${4:0}" y2="${5:1}">\n  <stop offset="${6:0}" stop-color="$7" />\n  <stop offset="${8:1}" stop-color="$9" />\n</linearGradient>'
+    'description': ''
+    'descriptionMoreURL': ''
+  'mask':
+    'prefix': 'mask'
+    'body': '<mask id="$1" maskUnits="${2:userSpaceOnUse}" x="${3:0}" y="${4:0}" width="${5:200}" height="${6:80}">$7</mask>'
+    'description': 'In SVG, you can specify that any other graphics object or <g> element can be used as an alpha mask for compositing the current object into the background. A mask is defined with the mask element. A mask is used/referenced using the mask property.'
+    'descriptionMoreURL': 'https://developer.mozilla.org/en-US/docs/Web/SVG/Element/mask'
   'path':
     'prefix': 'p'
-    'body': '<path fill="$1" stroke="$2" stroke-width="1" \n      d="$3" />\n'
+    'body': '<path d="$1" />\n'
+    'description': 'The path element is the generic element to define a shape. All the basic shapes can be created with a path element.'
+    'descriptionMoreURL': 'https://developer.mozilla.org/de/docs/Web/SVG/Element/path'
   'pattern':
     'prefix': 'pa'
     'body': '<pattern id="$1" width="$2" height="$3">\n  $4\n</pattern>'
+    'description': 'A pattern is used to fill or stroke an object using a pre-defined graphic object which can be replicated ("tiled") at fixed intervals in x and y to cover the areas to be painted. Patterns are defined using the pattern element and then referenced by properties fill and stroke on a given graphics element to indicate that the given element shall be filled or stroked with the referenced pattern.'
+    'descriptionMoreURL': 'https://developer.mozilla.org/de/docs/Web/SVG/Element/pattern'
+  'polygon':
+    'prefix': 'polygon'
+    'body': '<polygon points="$1"/>'
+    'description': 'The polygon element defines a closed shape consisting of a set of connected straight line segments. The last point is connected to the first point.'
+    'descriptionMoreURL': 'https://developer.mozilla.org/de/docs/Web/SVG/Element/polygon'
+  'polyline':
+    'prefix': 'polyline'
+    'body': '<polyline fill="$1" stroke="$2" points="$3"/>'
+    'description': 'The polyline element is an SVG basic shape, used to create a series of straight lines connecting several points. Typically a polyline is used to create open shapes as the last point is not connected to the first point.'
+    'descriptionMoreURL': 'https://developer.mozilla.org/de/docs/Web/SVG/Element/polyline'
   'radialGradient':
     'prefix': 'rg'
     'body': '<radialGradient id="$1">\n  <stop offset="${2:0}" stop-color="$3" />\n  <stop offset="${4:1}" stop-color="$5" />\n</radialGradient>'
+    'description': ''
+    'descriptionMoreURL': ''
   'rect':
     'prefix': 'r'
     'body': '<rect x="${1:0}" y="${2:0}" width="${3:200}" height="${4:100}" fill="${5:#CC0F16}" />'
+    'description': 'The rect element is an SVG basic shape, used to create rectangles based on the position of a corner and their width and height. It may also be used to create rectangles with rounded corners.'
+    'descriptionMoreURL': 'https://developer.mozilla.org/en/docs/Web/SVG/Element/rect'
   'script (external)':
     'prefix': 'sc'
     'body': '<script xlink:href="$1" />'
+    'description': 'A SVG script element is equivalent to the script element in HTML and thus is the place for scripts (e.g., ECMAScript). Any functions defined within any script element have a global scope across the entire current document.'
+    'descriptionMoreURL': 'https://developer.mozilla.org/de/docs/Web/SVG/Element/script'
+  'script (internal)':
+    'prefix': 'sci'
+    'body': '<script>// <![CDATA[ $2 // ]]></script>'
+    'description': 'A SVG script element is equivalent to the script element in HTML and thus is the place for scripts (e.g., ECMAScript). Any functions defined within any script element have a global scope across the entire current document.'
+    'descriptionMoreURL': 'https://developer.mozilla.org/de/docs/Web/SVG/Element/script'
   'stop':
     'prefix': 'st'
     'body': '<stop offset="${1:0.5}" stop-color="$2" />'
+    'description': 'The ramp of colors to use on a gradient is defined by the stop elements that are child elements to either the <linearGradient> element or the <radialGradient> element.'
+    'descriptionMoreURL': 'https://developer.mozilla.org/de/docs/Web/SVG/Element/stop'
+  'style':
+    'prefix': 'style'
+    'body': '<style>/* <![CDATA[ */${1:circle} {fill: ${2:orange}; stroke: ${3:black}; stroke-width: ${4:10px};}/* ]]> */</style>'
+    'description': 'The style element allows style sheets to be embedded directly within SVG content. SVG\'s style element has the same attributes as the corresponding element in HTML (see HTML\'s <style> element).'
+    'descriptionMoreURL': 'https://developer.mozilla.org/en-US/docs/Web/SVG/Element/style'
   'svg':
     'prefix': 'svg'
     'body': '<svg xmlns="http://www.w3.org/2000/svg"\n     xmlns:xlink="http://www.w3.org/1999/xlink"\n     width="${1:240}" height="${2:320}"\n     viewBox="0 0 $1 $2"\n     version="1.1">\n  <title>${3:Title here}</title>\n\n  <script><![CDATA[\n\n    // SVG script here\n\n  ]]></script>\n\n  $4\n</svg>'
+    'description': 'Scalable Vector Graphics (SVG) is an XML markup language for describing two-dimensional vector graphics. SVG is essentially to graphics what XHTML is to text.'
+    'descriptionMoreURL': 'https://developer.mozilla.org/en-US/docs/Web/SVG'
+  'symbol':
+    'prefix': 'symbol'
+    'body': '<symbol id="$1" viewBox="${1:0} ${2:0} ${3:150} ${4:110}">$5</symbol>'
+    'description': 'The symbol element is used to define graphical template objects which can be instantiated by a <use> element. The use of symbol elements for graphics that are used multiple times in the same document adds structure and semantics. Documents that are rich in structure may be rendered graphically, as speech, or as braille, and thus promote accessibility. note that a symbol element itself is not rendered. Only instances of a symbol element (i.e., a reference to a symbol by a <use> element) are rendered.'
+    'descriptionMoreURL': 'https://developer.mozilla.org/en-US/docs/Web/SVG/Element/symbol'
   'text':
     'prefix': 'text'
     'body': '<text x="$1" y="$2">$3</text>'
+    'description': 'The text element defines a graphics element consisting of text. Note that it is possible to apply a gradient, pattern, clipping path, mask or filter to text'
+    'descriptionMoreURL': 'https://developer.mozilla.org/de/docs/Web/SVG/Element/text'
+  'title':
+    'prefix': 'title'
+    'body': '<title>$1</title>'
+    'description': 'Each container element or graphics element in an SVG drawing can supply a title description string where the description is text-only. When the current SVG document fragment is rendered as SVG on visual media, title element is not rendered as part of the graphics. However, some user agents may, for example, display the title element as a tooltip. Alternate presentations are possible, both visual and aural, which display the title element but do not display path elements or other graphics elements. The title element generally improve accessibility of SVG documents Generally title element should be the first child element of its parent. Note that those implementations that do use title to display a tooltip often will only do so if the title is indeed the first child element of its parent.'
+    'descriptionMoreURL': 'https://developer.mozilla.org/en-US/docs/Web/SVG/Element/title'
+  'tspan':
+    'prefix': 'tspan'
+    'body': '<tspan x="$1" y="$2">$3</tspan>'
+    'description': 'Within a <text> element, text and font properties and the current text position can be adjusted with absolute or relative coordinate values by including a tspan element.'
+    'descriptionMoreURL': 'https://developer.mozilla.org/de/docs/Web/SVG/Element/tspan'
   'use':
     'prefix': 'u'
     'body': '<use xlink:href="$1" x="$2" y="$3" />'
+    'description': 'The use element takes nodes from within the SVG document, and duplicates them somewhere else. The effect is the same as if the nodes were deeply cloned into a non-exposed DOM, and then pasted where the use element is, much like cloned template elements in HTML5. Since the cloned nodes are not exposed, care must be taken when using CSS to style a use element and its hidden descendants. CSS attributes are not guaranteed to be inherited by the hidden, cloned DOM unless you explicitly request it using CSS inheritance. For security reasons, some browsers could apply a same-origin policy on use elements and could refuse to load a cross-origin URI within the xlink:href attribute.'
+    'descriptionMoreURL': 'https://developer.mozilla.org/de/docs/Web/SVG/Element/use'
 '.text.xml.svg .meta.tag.xml':
-  'onclick':
-    'prefix': 'on'
-    'body': 'onclick="$1"'
-  'onfocusin':
-    'prefix': 'on'
-    'body': 'onfocusin="$1"'
-  'onfocusout':
-    'prefix': 'on'
-    'body': 'onfocusout="$1"'
-  'onload':
-    'prefix': 'on'
-    'body': 'onmouseout="$1"'
-  'onmousedown':
-    'prefix': 'on'
-    'body': 'onmousedown="$1"'
-  'onmousemove':
-    'prefix': 'on'
-    'body': 'onmousemove="$1"'
-  'onmouseout':
-    'prefix': 'on'
-    'body': 'onmouseout="$1"'
-  'onmouseover':
-    'prefix': 'on'
-    'body': 'onmouseover="$1"'
-  'onmouseenter':
-    'prefix': 'on'
-    'body': 'onmouseenter="$1"'
-  'onmouseleave':
-    'prefix': 'on'
-    'body': 'onmouseleave="$1"'
-  'onmouseup':
-    'prefix': 'on'
-    'body': 'onmouseup="$1"'
-  'rotate':
-    'prefix': 'ro'
-    'body': 'transform="rotate($1, $2)"'
-  'scale':
-    'prefix': 'sc'
-    'body': 'transform="scale($1)"'
-  'translate':
-    'prefix': 'tr'
-    'body': 'transform="translate($1, $2)"'
+  'clip-path':
+    'prefix': 'clip-path'
+    'body': 'clip-path="url(#$1)"'
+    'description': 'The clip-path attribute bind the element is applied to with a given <clippath> element'
+    'descriptionMoreURL': 'https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/clip-path'
+  'color-interpolation-filters':
+    'prefix': 'color-interpolation-filters'
+    'body': 'color-interpolation-filters="${1:sRGB}"'
+    'description': 'The color-interpolation-filters attribute specifies the color space for imaging operations performed via filter effects. Note that color-interpolation-filters has a different initial value than color-interpolation. color-interpolation-filters has an initial value of linearRGB, whereas color-interpolation has an initial value of sRGB. Thus, in the default case, filter effects operations occur in the linearRGB color space, whereas all other color interpolations occur by default in the sRGB color space.'
+    'descriptionMoreURL': 'https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/color-interpolation-filters'
+  'mask':
+    'prefix': 'mask'
+    'body': 'mask="url(#$1)"'
+    'description': 'The mask attribute bind the element is applied to with a given <mask> element'
+    'descriptionMoreURL': 'https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/mask'
   'matrix':
     'prefix': 'ma'
     'body': 'transform="matrix($1, $2, $3, $4, $5, $6)"'
+    'description': 'This transform definition specifies a transformation in the form of a transformation matrix of six values.'
+    'descriptionMoreURL': 'https://developer.mozilla.org/de/docs/Web/SVG/Attribute/transform'
+  'height':
+    'prefix': 'h'
+    'body': 'height="$1"'
+    'description': 'This attribute indicates a vertical length in the user coordinate system. The exact effect of this coordinate depends on each element. Most of the time, it represents the height of the rectangular region of the reference element (see each individual element\'s documentation for exceptions).'
+    'descriptionMoreURL': 'https://developer.mozilla.org/de/docs/Web/SVG/Attribute/height'
+  'image-rendering':
+    'prefix': 'image-rendering'
+    'body': 'image-rendering="${1:pixelated}"'
+    'description': 'The image-rendering attribute provides a hint to the browser about how to make speed vs. quality tradeoffs as it performs image processing.'
+    'descriptionMoreURL': 'https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/image-rendering'
+  'onclick':
+    'prefix': 'on'
+    'body': 'onclick="$1"'
+    'description': ''
+    'descriptionMoreURL': ''
+  'onfocusin':
+    'prefix': 'on'
+    'body': 'onfocusin="$1"'
+    'description': ''
+    'descriptionMoreURL': ''
+  'onfocusout':
+    'prefix': 'on'
+    'body': 'onfocusout="$1"'
+    'description': ''
+    'descriptionMoreURL': ''
+  'onload':
+    'prefix': 'on'
+    'body': 'onmouseout="$1"'
+    'description': ''
+    'descriptionMoreURL': ''
+  'onmousedown':
+    'prefix': 'on'
+    'body': 'onmousedown="$1"'
+    'description': ''
+    'descriptionMoreURL': ''
+  'onmousemove':
+    'prefix': 'on'
+    'body': 'onmousemove="$1"'
+    'description': ''
+    'descriptionMoreURL': ''
+  'onmouseout':
+    'prefix': 'on'
+    'body': 'onmouseout="$1"'
+    'description': ''
+    'descriptionMoreURL': ''
+  'onmouseover':
+    'prefix': 'on'
+    'body': 'onmouseover="$1"'
+    'description': ''
+    'descriptionMoreURL': ''
+  'onmouseenter':
+    'prefix': 'on'
+    'body': 'onmouseenter="$1"'
+    'description': ''
+    'descriptionMoreURL': ''
+  'onmouseleave':
+    'prefix': 'on'
+    'body': 'onmouseleave="$1"'
+    'description': ''
+    'descriptionMoreURL': ''
+  'onmouseup':
+    'prefix': 'on'
+    'body': 'onmouseup="$1"'
+    'description': ''
+    'descriptionMoreURL': ''
+  'opacity':
+    'prefix': 'opacity'
+    'body': 'opacity="$1"'
+    'description': 'The opacity attribute specifies the transparency of an object or of a group of objects, that is, the degree to which the background behind the element is overlaid.'
+    'descriptionMoreURL': 'https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/opacity'
+  'preserveAspectRatio':
+    'prefix': 'par'
+    'body': 'preserveAspectRatio="${1:xMidYMid slice}"'
+    'description': 'In some cases, typically when using the viewBox attribute, it is desirable that the graphics stretch to fit non-uniformly to take up the entire viewport. In other cases, it is desirable that uniform scaling be used for the purposes of preserving the aspect ratio of the graphics. Attribute preserveAspectRatio indicates whether or not to force uniform scaling. For all elements that support that attribute (see above), except for the <image> element, preserveAspectRatio only applies when a value has been provided for viewBox on the same element. For these elements, if attribute viewBox is not provided, then preserveAspectRatio is ignored. For <image> elements, preserveAspectRatio indicates how referenced images should be fitted with respect to the reference rectangle and whether the aspect ratio of the referenced image should be preserved with respect to the current user coordinate system.'
+    'descriptionMoreURL': 'https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/preserveAspectRatio'
+  'rotate':
+    'prefix': 'ro'
+    'body': 'transform="rotate($1, $2)"'
+    'description': 'This transform definition specifies a rotation by a degrees about a given point. If optional parameters x and y are not supplied, the rotate is about the origin of the current user coordinate system. If optional parameters x and y are supplied, the rotate is about the point (x, y).'
+    'descriptionMoreURL': 'https://developer.mozilla.org/de/docs/Web/SVG/Attribute/transform'
+  'scale':
+    'prefix': 'sc'
+    'body': 'transform="scale($1)"'
+    'description': 'This transform definition specifies a scale operation by x and y. If y is not provided, it is assumed to be equal to x.'
+    'descriptionMoreURL': 'https://developer.mozilla.org/de/docs/Web/SVG/Attribute/transform'
+  'shape-rendering':
+    'prefix': 'shape-rendering'
+    'body': 'shape-rendering="${1:crispEdges}"'
+    'description': 'The creator of SVG content might want to provide a hint about what tradeoffs to make as the browser renders <path> element or basic shapes. The shape-rendering attribute provides these hints.'
+    'descriptionMoreURL': 'https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/shape-rendering'
+  'skewX':
+    'prefix': 'skewx'
+    'body': 'transform="skewX($1)"'
+    'description': 'This transform definition specifies a skew transformation along the x axis by a degrees.'
+    'descriptionMoreURL': 'https://developer.mozilla.org/de/docs/Web/SVG/Attribute/transform'
+  'skewY':
+    'prefix': 'skewy'
+    'body': 'transform="skewY($1)"'
+    'description': 'This transform definition specifies a skew transformation along the y axis by a degrees.'
+    'descriptionMoreURL': 'https://developer.mozilla.org/de/docs/Web/SVG/Attribute/transform'
+  'stroke':
+    'prefix': 'stroke'
+    'body': 'stroke="$1"'
+    'description': 'The stroke attribute defines the color of the outline on a given graphical element. The default value for the stroke attribute is none.'
+    'descriptionMoreURL': 'https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke'
+  'stroke-dasharray':
+    'prefix': 'stroke-dasharray'
+    'body': 'stroke-dasharray="$1,$2"'
+    'description': 'The stroke-dasharray attribute controls the pattern of dashes and gaps used to stroke paths.'
+    'descriptionMoreURL': 'https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke-dasharray'
+  'stroke-linecap':
+    'prefix': 'stroke-linecap'
+    'body': 'stroke-linecap="$1"'
+    'description': 'The stroke-linecap attribute specifies the shape to be used at the end of open subpaths when they are stroked.'
+    'descriptionMoreURL': 'https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke-linecap'
+  'stroke-width':
+    'prefix': 'stroke-width'
+    'body': 'stroke-width="$1"'
+    'description': 'The stroke-width attribute specifies the width of the outline on the current object. Its default value is 1. If a <percentage> is used, the value represents a percentage of the current viewport. If a value of 0 is used the outline will never be drawn.'
+    'descriptionMoreURL': 'https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke-width'
+  'text-rendering':
+    'prefix': 'text-rendering'
+    'body': 'text-rendering="${1:geometricPrecision}"'
+    'description': 'The creator of SVG content might want to provide a hint about what tradeoffs to make as the browser renders text. The text-rendering attribute provides these hints.'
+    'descriptionMoreURL': 'https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/text-rendering'
+  'translate':
+    'prefix': 'tr'
+    'body': 'transform="translate($1, $2)"'
+    'description': 'This transform definition specifies a scale operation by x and y. If y is not provided, it is assumed to be equal to x.'
+    'descriptionMoreURL': 'https://developer.mozilla.org/de/docs/Web/SVG/Attribute/transform'
+  'viewBox':
+    'prefix': 'vb'
+    'body': 'viewBox="${1:0} ${2:0} ${3:0} ${4:0}"'
+    'description': 'The viewBox attribute allows to specify that a given set of graphics stretch to fit a particular container element. The value of the viewBox attribute is a list of four numbers min-x, min-y, width and height, separated by whitespace and/or a comma, which specify a rectangle in user space which should be mapped to the bounds of the viewport established by the given element, taking into account attribute preserveAspectRatio. Negative values for width or height are not permitted and a value of zero disables rendering of the element.'
+    'descriptionMoreURL': 'https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/viewBox'
+  'width':
+    'prefix': 'w'
+    'body': 'width="$1"'
+    'description': 'This attribute indicates an horizontal length in the user coordinate system. The exact effect of this coordinate depend on each element. Most of the time, it represents the width of the rectangular region of the reference element (see each individual element\'s documentation for exceptions).'
+    'descriptionMoreURL': 'https://developer.mozilla.org/de/docs/Web/SVG/Attribute/width'
