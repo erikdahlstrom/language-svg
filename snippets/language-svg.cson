@@ -342,7 +342,7 @@
     'descriptionMoreURL': 'https://developer.mozilla.org/de/docs/Web/SVG/Attribute/transform'
   'viewBox':
     'prefix': 'vb'
-    'body': 'viewBox="${1:0} ${2:0} ${3:0} ${4:0}"'
+    'body': 'viewBox="${1:0} ${2:0} ${3:800} ${4:600}"'
     'description': 'The viewBox attribute allows to specify that a given set of graphics stretch to fit a particular container element. The value of the viewBox attribute is a list of four numbers min-x, min-y, width and height, separated by whitespace and/or a comma, which specify a rectangle in user space which should be mapped to the bounds of the viewport established by the given element, taking into account attribute preserveAspectRatio. Negative values for width or height are not permitted and a value of zero disables rendering of the element.'
     'descriptionMoreURL': 'https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/viewBox'
   'width':
