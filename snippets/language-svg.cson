@@ -1,7 +1,7 @@
 '.text.xml.svg':
   'animate':
     'prefix': 'ani'
-    'body': '<animate attributeName="$1" values="$2;$3" begin="$4" dur="$5s" fill="${6:freeze}" repeatCount="$7" />'
+    'body': '<animate attributeName="$1" values="$2;$3" begin="$4" dur="$5s" fill="${6:freeze}" repeatCount="{$7:indefinite}" />'
     'description': 'The animate element is put inside a shape element and defines how an attribute of an element changes over the animation. The attribute will change from the initial value to the end value in the duration specified.'
     'descriptionMoreURL': 'https://developer.mozilla.org/en-US/docs/Web/SVG/Element/animate'
   'animateMotion':
