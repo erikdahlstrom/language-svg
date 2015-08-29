@@ -338,7 +338,7 @@
   'translate':
     'prefix': 'tr'
     'body': 'transform="translate($1, $2)"'
-    'description': 'This transform definition specifies a scale operation by x and y. If y is not provided, it is assumed to be equal to x.'
+    'description': 'This transform definition specifies a translate operation by x and y.'
     'descriptionMoreURL': 'https://developer.mozilla.org/de/docs/Web/SVG/Attribute/transform'
   'viewBox':
     'prefix': 'vb'
