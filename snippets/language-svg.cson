@@ -67,7 +67,7 @@
   'fePointLight':
     'prefix': 'fePointLight'
     'body': '<fePointLight x="$1" y="$2" z="$3" />'
-    'description': ''
+    'description': 'The fePointLight element is one of the light source elements used for SVG files.'
     'descriptionMoreURL': 'https://developer.mozilla.org/en-US/docs/Web/SVG/Element/fePointLight'
   'feSpotLight':
     'prefix': 'feSpotLight'
