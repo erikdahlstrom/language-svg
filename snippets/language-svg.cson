@@ -72,7 +72,7 @@
   'feSpotLight':
     'prefix': 'feSpotLight'
     'body': '<feSpotLight x="${1:360}" y="${2:5}" z="${3:30}" limitingConeAngle="${4:20}" pointsAtX="${5:390}" pointsAtY="${6:80}" pointsAtZ="${7:0}"/>'
-    'description': 'The feSpotLight element is one of the ligth source elements used for SVG files.'
+    'description': 'The feSpotLight element is one of the light source elements used for SVG files.'
     'descriptionMoreURL': 'https://developer.mozilla.org/en-US/docs/Web/SVG/Element/feSpotLight'
   'filter':
     'prefix': 'filter'
