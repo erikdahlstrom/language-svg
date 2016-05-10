@@ -36,7 +36,7 @@
     'descriptionMoreURL': 'https://developer.mozilla.org/de/docs/Web/SVG/Element/desc'
   'ellipse':
     'prefix': 'e'
-    'body': '<ellipse cx="${1:50}" cy="${2:50}" rx="${3:20}" ry="${4:30} fill="${5:#CC0F16}" />'
+    'body': '<ellipse cx="${1:50}" cy="${2:50}" rx="${3:20}" ry="${4:30}" fill="${5:#CC0F16}" />'
     'description': 'The ellipse element is an SVG basic shape, used to create ellipses based on a center coordinate, and both their x and y radius. Ellipses are unable to specify the exact orientation of the ellipse (if, for example, you wanted to draw an ellipse tilted at a 45 degree angle), but can be rotated by using the transform attribute.'
     'descriptionMoreURL': 'https://developer.mozilla.org/de/docs/Web/SVG/Element/ellipse'
   'feColorMatrix':
