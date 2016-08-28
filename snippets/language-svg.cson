@@ -126,7 +126,7 @@
     'descriptionMoreURL': 'https://developer.mozilla.org/de/docs/Web/SVG/Element/polygon'
   'polyline':
     'prefix': 'polyline'
-    'body': '<polyline fill="{$1:none}" stroke="$2" points="$3"/>'
+    'body': '<polyline fill="${1:none}" stroke="$2" points="$3"/>'
     'description': 'The polyline element is an SVG basic shape, used to create a series of straight lines connecting several points. Typically a polyline is used to create open shapes as the last point is not connected to the first point.'
     'descriptionMoreURL': 'https://developer.mozilla.org/de/docs/Web/SVG/Element/polyline'
   'radialGradient':
