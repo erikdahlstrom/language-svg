@@ -21,9 +21,6 @@
     ]
   }
   {
-    'include': 'text.xml'
-  }
-  {
     'begin': '(?:^\\s+)?<((?i:style))\\b(?![^>]*/>)'
     'captures':
       '1':
@@ -96,51 +93,7 @@
     ]
   }
   {
-    'begin': '(?:^\\s+)?(<)((?i:handler))\\b(?![^>]*/>)'
-    'beginCaptures':
-      '1':
-        'name': 'punctuation.definition.tag.svg'
-      '2':
-        'name': 'entity.name.tag.handler.svg'
-    'end': '(?<=</(handler))(>)(?:\\s*\\n)?'
-    'endCaptures':
-      '2':
-        'name': 'punctuation.definition.tag.svg'
-    'name': 'source.js.embedded.svg'
-    'patterns': [
-      {
-        'include': '#tag-stuff'
-      }
-      {
-        'begin': '(?<!</(?:handler))(>)'
-        'captures':
-          '1':
-            'name': 'punctuation.definition.tag.svg'
-          '2':
-            'name': 'entity.name.tag.handler.svg'
-        'end': '(</)((?i:handler))'
-        'patterns': [
-          {
-            'captures':
-              '1':
-                'name': 'punctuation.definition.comment.js'
-            'match': '(//).*?((?=</handler)|$\\n?)'
-            'name': 'comment.line.double-slash.js'
-          }
-          {
-            'begin': '/\\*'
-            'captures':
-              '0':
-                'name': 'punctuation.definition.comment.js'
-            'end': '\\*/|(?=</handler)'
-            'name': 'comment.block.js'
-          }
-          {
-            'include': 'source.js'
-          }
-        ]
-      }
-    ]
+    'include': 'text.xml'
   }
 ]
 'scopeName': 'text.xml.svg'

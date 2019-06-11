@@ -189,7 +189,7 @@
     'body': '<use xlink:href="$1" x="$2" y="$3" />'
     'description': 'The use element takes nodes from within the SVG document, and duplicates them somewhere else. The effect is the same as if the nodes were deeply cloned into a non-exposed DOM, and then pasted where the use element is, much like cloned template elements in HTML5. Since the cloned nodes are not exposed, care must be taken when using CSS to style a use element and its hidden descendants. CSS attributes are not guaranteed to be inherited by the hidden, cloned DOM unless you explicitly request it using CSS inheritance. For security reasons, some browsers could apply a same-origin policy on use elements and could refuse to load a cross-origin URI within the xlink:href attribute.'
     'descriptionMoreURL': 'https://developer.mozilla.org/de/docs/Web/SVG/Element/use'
-'.text.xml.svg .meta.tag.xml':
+'.text.xml.svg .meta.tag.xml, .text.xml.svg .embedded':
   'clip-path':
     'prefix': 'clip-path'
     'body': 'clip-path="url(#$1)"'
@@ -330,6 +330,11 @@
     'body': 'stroke-width="$1"'
     'description': 'The stroke-width attribute specifies the width of the outline on the current object. Its default value is 1. If a <percentage> is used, the value represents a percentage of the current viewport. If a value of 0 is used the outline will never be drawn.'
     'descriptionMoreURL': 'https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke-width'
+  'style':
+    'prefix': 'style',
+    'body': 'style="$1"'
+    'description': 'The style attribute allows to style an element using CSS declarations. It functions identically to the style attribute in HTML.'
+    'descriptionMoreURL': 'https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/style'
   'text-rendering':
     'prefix': 'text-rendering'
     'body': 'text-rendering="${1:geometricPrecision}"'
