@@ -140,6 +140,9 @@
     'name': 'meta.tag.shape.$2.svg'
     'patterns': [
       {
+        'include': '#tag-d-attribute'
+      }
+      {
         'include': '#tag-stuff'
       }
     ]
@@ -182,7 +185,31 @@
   }
 ]
 'repository':
+  'path-data':
+    'patterns': [
+      {
+        'name': 'meta.instruction.path.svg'
+        'match': '[AaCcHhLlMmQqSsTtVvZz][^AaCcHhLlMmQqSsTtVvZz"]+'
+        'captures':
+          '0':
+            'patterns': [
+              {
+                'name': 'keyword.instruction.path.svg'
+                'match': '[AaCcHhLlMmQqSsTtVvZz]'
+              }
+              {
+                'name': 'meta.instruction-value.path.svg'
+                'match': '-?[\\d|.]+'
+              }
+              {
+                'name': 'punctuation.separator.instruction-list.comma.svg'
+                'match': ','
+              }
+            ]
+      }
+    ]
   'string-double-quoted':
+    'name': 'string.quoted.double.svg'
     'begin': '"'
     'beginCaptures':
       '0':
@@ -191,8 +218,8 @@
     'endCaptures':
       '0':
         'name': 'punctuation.definition.string.end.svg'
-    'name': 'string.quoted.double.svg'
   'string-single-quoted':
+    'name': 'string.quoted.single.svg'
     'begin': '\''
     'beginCaptures':
       '0':
@@ -201,10 +228,88 @@
     'endCaptures':
       '0':
         'name': 'punctuation.definition.string.end.svg'
-    'name': 'string.quoted.single.svg'
+  'tag-class-attribute':
+    'name': 'meta.attribute-with-value.class.svg'
+    'begin': '\\b(class)\\s*(=)\\s*'
+    'captures':
+      '1':
+        'name': 'entity.other.attribute-name.class.svg'
+      '2':
+        'name': 'punctuation.separator.key-value.svg'
+    'end': '(?!\\G)|(?=\\s|/?>)'
+    'patterns': [
+      {
+        'include': '#string-double-quoted'
+      }
+      {
+        'include': '#string-single-quoted'
+      }
+    ]
+  'tag-d-attribute':
+    'name': 'meta.attribute-with-value.d.svg'
+    'begin': '\\b(d)\\s*(=)\\s*'
+    'beginCaptures':
+      '1':
+        'name': 'entity.other.attribute-name.d.svg'
+      '2':
+        'name': 'punctuation.separator.key-value.svg'
+    'end': '(?!\\G)|(?=\\s|/?>)'
+    'patterns': [
+      {
+        'name': 'string.quoted.double.svg'
+        'begin': '"'
+        'beginCaptures':
+          '0':
+            'name': 'punctuation.definition.string.begin.svg'
+        'end': '"'
+        'endCaptures':
+          '0':
+            'name': 'punctuation.definition.string.end.svg'
+        'contentName': 'text.xml.svg.instruction-list'
+        'patterns': [
+          {
+            'name': 'meta.instruction-list.path.svg'
+            'match': '[^"]+'
+            'captures':
+              '0':
+                'patterns': [
+                  {
+                    'include': '#path-data'
+                  }
+                ]
+          }
+        ]
+      }
+      {
+        'name': 'string.quoted.single.svg'
+        'begin': "'"
+        'beginCaptures':
+          '0':
+            'name': 'punctuation.definition.string.begin.svg'
+        'end': "'"
+        'endCaptures':
+          '0':
+            'name': 'punctuation.definition.string.end.svg'
+        'contentName': 'source.css.style.svg'
+        'patterns': [
+          {
+            'name': 'meta.property-list.css'
+            'match': "[^']+"
+            'captures':
+              '0':
+                'patterns': [
+                  {
+                    'include': 'source.css#rule-list-innards'
+                  }
+                ]
+          }
+        ]
+      }
+    ]
   'tag-generic-attribute':
     'patterns': [
       {
+        'name': 'meta.attribute-with-value.svg'
         'begin': '([^\\s/=>"\'<]+)\\s*(=)\\s*'
         'beginCaptures':
           '1':
@@ -212,7 +317,6 @@
           '2':
             'name': 'punctuation.separator.key-value.svg'
         'end': '(?!\\G)|(?=\\s|/?>)'
-        'name': 'meta.attribute-with-value.svg'
         'patterns': [
           {
             'include': '#string-double-quoted'
@@ -223,68 +327,8 @@
         ]
       }
     ]
-  'tag-style-attribute':
-    'begin': '\\b(style)\\s*(=)\\s*'
-    'beginCaptures':
-      '1':
-        'name': 'entity.other.attribute-name.style.svg'
-      '2':
-        'name': 'punctuation.separator.key-value.svg'
-    'end': '(?!\\G)|(?=\\s|/?>)'
-    'name': 'meta.attribute-with-value.style.svg'
-    'patterns': [
-      {
-        'begin': '"'
-        'beginCaptures':
-          '0':
-            'name': 'punctuation.definition.string.begin.svg'
-        'end': '"'
-        'endCaptures':
-          '0':
-            'name': 'punctuation.definition.string.end.svg'
-        'name': 'string.quoted.double.svg'
-        'contentName': 'source.css.style.svg'
-        'patterns': [
-          {
-            'match': '[^"]+'
-            'name': 'meta.property-list.css'
-            'captures':
-              '0':
-                'patterns': [
-                  {
-                    'include': 'source.css#rule-list-innards'
-                  }
-                ]
-          }
-        ]
-      }
-      {
-        'begin': "'"
-        'beginCaptures':
-          '0':
-            'name': 'punctuation.definition.string.begin.svg'
-        'end': "'"
-        'endCaptures':
-          '0':
-            'name': 'punctuation.definition.string.end.svg'
-        'name': 'string.quoted.single.svg'
-        'contentName': 'source.css.style.svg'
-        'patterns': [
-          {
-            'match': "[^']+"
-            'name': 'meta.property-list.css'
-            'captures':
-              '0':
-                'patterns': [
-                  {
-                    'include': 'source.css#rule-list-innards'
-                  }
-                ]
-          }
-        ]
-      }
-    ]
   'tag-id-attribute':
+    'name': 'meta.attribute-with-value.id.svg'
     'begin': '\\b(id)\\s*(=)\\s*'
     'captures':
       '1':
@@ -292,9 +336,9 @@
       '2':
         'name': 'punctuation.separator.key-value.svg'
     'end': '(?!\\G)|(?=\\s|/?>)'
-    'name': 'meta.attribute-with-value.id.svg'
     'patterns': [
       {
+        'name': 'string.quoted.double.svg'
         'begin': '"'
         'beginCaptures':
           '0':
@@ -304,9 +348,9 @@
         'endCaptures':
           '0':
             'name': 'punctuation.definition.string.end.svg'
-        'name': 'string.quoted.double.svg'
       }
       {
+        'name': 'string.quoted.single.svg'
         'begin': '\''
         'beginCaptures':
           '0':
@@ -316,24 +360,6 @@
         'endCaptures':
           '0':
             'name': 'punctuation.definition.string.end.svg'
-        'name': 'string.quoted.single.svg'
-      }
-    ]
-  'tag-class-attribute':
-    'begin': '\\b(class)\\s*(=)\\s*'
-    'captures':
-      '1':
-        'name': 'entity.other.attribute-name.class.svg'
-      '2':
-        'name': 'punctuation.separator.key-value.svg'
-    'end': '(?!\\G)|(?=\\s|/?>)'
-    'name': 'meta.attribute-with-value.class.svg'
-    'patterns': [
-      {
-        'include': '#string-double-quoted'
-      }
-      {
-        'include': '#string-single-quoted'
       }
     ]
   'tag-stuff':
@@ -350,4 +376,65 @@
       {
         'include': '#tag-generic-attribute'
       }
-  ]
+    ]
+  'tag-style-attribute':
+    'name': 'meta.attribute-with-value.style.svg'
+    'begin': '\\b(style)\\s*(=)\\s*'
+    'beginCaptures':
+      '1':
+        'name': 'entity.other.attribute-name.style.svg'
+      '2':
+        'name': 'punctuation.separator.key-value.svg'
+    'end': '(?!\\G)|(?=\\s|/?>)'
+    'patterns': [
+      {
+        'name': 'string.quoted.double.svg'
+        'begin': '"'
+        'beginCaptures':
+          '0':
+            'name': 'punctuation.definition.string.begin.svg'
+        'end': '"'
+        'endCaptures':
+          '0':
+            'name': 'punctuation.definition.string.end.svg'
+        'contentName': 'source.css.style.svg'
+        'patterns': [
+          {
+            'match': '[^"]+'
+            'name': 'meta.property-list.css'
+            'captures':
+              '0':
+                'patterns': [
+                  {
+                    'include': 'source.css#rule-list-innards'
+                  }
+                ]
+          }
+        ]
+      }
+      {
+        'name': 'string.quoted.single.svg'
+        'begin': "'"
+        'beginCaptures':
+          '0':
+            'name': 'punctuation.definition.string.begin.svg'
+        'end': "'"
+        'endCaptures':
+          '0':
+            'name': 'punctuation.definition.string.end.svg'
+        'contentName': 'source.css.style.svg'
+        'patterns': [
+          {
+            'name': 'meta.property-list.css'
+            'match': "[^']+"
+            'captures':
+              '0':
+                'patterns': [
+                  {
+                    'include': 'source.css#rule-list-innards'
+                  }
+                ]
+          }
+        ]
+      }
+    ]
