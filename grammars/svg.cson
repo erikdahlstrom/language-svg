@@ -1,46 +1,46 @@
+'name': 'SVG'
+'scopeName': 'text.xml.svg'
 'fileTypes': [
   'svg'
 ]
 'foldingStartMarker': '^\\s*(<[^!?%/](?!.+?(/>|</.+?>))|<[!%]--(?!.+?--%?>)|<%[!]?(?!.+?%>))'
 'foldingStopMarker': '^\\s*(</[^>]+>|[/%]>|-->)\\s*$'
-'name': 'SVG'
 'patterns': [
+  # Style tag, include CSS grammar
   {
-    'match': '\\b(if|while|for|return)\\b'
-    'name': 'keyword.control.untitled'
-  }
-  {
-    'begin': '"'
-    'end': '"'
-    'name': 'string.quoted.double.untitled'
-    'patterns': [
-      {
-        'match': '\\\\.'
-        'name': 'constant.character.escaped.untitled'
-      }
-    ]
-  }
-  {
-    'include': 'text.xml'
-  }
-  {
-    'begin': '(?:^\\s+)?<((?i:style))\\b(?![^>]*/>)'
-    'captures':
+    'begin': '(?i)(?=<style(\\s+|>))'
+    'end': '(?i)(</)(style)(>)'
+    'endCaptures':
       '1':
+        'name': 'punctuation.definition.tag.svg'
+      '2':
         'name': 'entity.name.tag.style.svg'
-    'end': '</((?i:style))>(?:\\s*\\n)?'
-    'name': 'source.css.embedded.svg'
+      '3':
+        'name': 'punctuation.definition.tag.svg'
+    'name': 'meta.tag.style.svg'
     'patterns': [
       {
-        'include': '#tag-stuff'
-      }
-      {
-        'begin': '>'
-        'end': '(?=</(?i:style))'
+        'begin': '(?i)\\G(<)(style)'
+        'beginCaptures':
+          '1':
+            'name': 'punctuation.definition.tag.svg'
+          '2':
+            'name': 'entity.name.tag.style.svg'
+        'end': '>'
+        'endCaptures':
+          '0':
+            'name': 'punctuation.definition.tag.svg'
         'patterns': [
           {
-            'include': '#embedded-code'
+            'include': '#tag-stuff'
           }
+        ]
+      }
+      {
+        'begin': '(?!\\G)'
+        'end': '(?i)(?=</style>)'
+        'name': 'source.css.embedded.svg'
+        'patterns': [
           {
             'include': 'source.css'
           }
@@ -48,6 +48,7 @@
       }
     ]
   }
+  # Script tag, include JS grammar
   {
     'begin': '(?:^\\s+)?(<)((?i:script))\\b(?![^>]*/>)'
     'beginCaptures':
@@ -95,52 +96,345 @@
       }
     ]
   }
+  # SVG structural tags
   {
-    'begin': '(?:^\\s+)?(<)((?i:handler))\\b(?![^>]*/>)'
-    'beginCaptures':
+    'begin': '(?i)(</?)(svg|defs|g|symbol|use)(?=\\s|/?>)'
+    'captures':
       '1':
         'name': 'punctuation.definition.tag.svg'
       '2':
-        'name': 'entity.name.tag.handler.svg'
-    'end': '(?<=</(handler))(>)(?:\\s*\\n)?'
-    'endCaptures':
-      '2':
-        'name': 'punctuation.definition.tag.svg'
-    'name': 'source.js.embedded.svg'
+        'name': 'entity.name.tag.structure.$2.svg'
+    'end': '(>)'
+    'name': 'meta.tag.structure.$2.svg'
     'patterns': [
       {
         'include': '#tag-stuff'
       }
+    ]
+  }
+  # SVG descriptive tags
+  {
+    'begin': '(?i)(</?)(desc|metadata|title)(?=\\s|/?>)'
+    'captures':
+      '1':
+        'name': 'punctuation.definition.tag.svg'
+      '2':
+        'name': 'entity.name.tag.description.$2.svg'
+    'end': '((?: ?/)?>)'
+    'name': 'meta.tag.description.$2.svg'
+    'patterns': [
       {
-        'begin': '(?<!</(?:handler))(>)'
+        'include': '#tag-stuff'
+      }
+    ]
+  }
+  # SVG shape tags
+  {
+    'begin': '(?i)(</?)(path|rect|circle|ellipse|line|polyline|polygon)(?=\\s|/?>)'
+    'captures':
+      '1':
+        'name': 'punctuation.definition.tag.svg'
+      '2':
+        'name': 'entity.name.tag.shape.$2.svg'
+    'end': '((?: ?/)?>)'
+    'name': 'meta.tag.shape.$2.svg'
+    'patterns': [
+      {
+        'include': '#tag-d-attribute'
+      }
+      {
+        'include': '#tag-stuff'
+      }
+    ]
+  }
+  # SVG animation tags
+  {
+    'begin': '(?i)(</?)(animate|animateColor|animateMotion|animateTransform|set)(?=\\s|/?>)'
+    'captures':
+      '1':
+        'name': 'punctuation.definition.tag.svg'
+      '2':
+        'name': 'entity.name.tag.animation.$2.svg'
+    'end': '((?: ?/)?>)'
+    'name': 'meta.tag.animation.$2.svg'
+    'patterns': [
+      {
+        'include': '#tag-stuff'
+      }
+    ]
+  }
+  # SVG text tags
+  {
+    'begin': '(?i)(</?)(text|tspan|tref|textPath|altGlyph|altGlyphDef|altGlyphItem|glyphRef)(?=\\s|/?>)'
+    'captures':
+      '1':
+        'name': 'punctuation.definition.tag.svg'
+      '2':
+        'name': 'entity.name.tag.text.$2.svg'
+    'end': '((?: ?/)?>)'
+    'name': 'meta.tag.text.$2.svg'
+    'patterns': [
+      {
+        'include': '#tag-stuff'
+      }
+    ]
+  }
+  # Include XML grammar
+  {
+    'include': 'text.xml'
+  }
+]
+'repository':
+  'path-data':
+    'patterns': [
+      {
+        'name': 'meta.instruction.path.svg'
+        'match': '[AaCcHhLlMmQqSsTtVvZz][^AaCcHhLlMmQqSsTtVvZz"]+'
         'captures':
-          '1':
-            'name': 'punctuation.definition.tag.svg'
-          '2':
-            'name': 'entity.name.tag.handler.svg'
-        'end': '(</)((?i:handler))'
+          '0':
+            'patterns': [
+              {
+                'name': 'keyword.instruction.path.svg'
+                'match': '[AaCcHhLlMmQqSsTtVvZz]'
+              }
+              {
+                'name': 'meta.instruction-value.path.svg'
+                'match': '-?[\\d|.]+'
+              }
+              {
+                'name': 'punctuation.separator.instruction-list.comma.svg'
+                'match': ','
+              }
+            ]
+      }
+    ]
+  'string-double-quoted':
+    'name': 'string.quoted.double.svg'
+    'begin': '"'
+    'beginCaptures':
+      '0':
+        'name': 'punctuation.definition.string.begin.svg'
+    'end': '"'
+    'endCaptures':
+      '0':
+        'name': 'punctuation.definition.string.end.svg'
+  'string-single-quoted':
+    'name': 'string.quoted.single.svg'
+    'begin': '\''
+    'beginCaptures':
+      '0':
+        'name': 'punctuation.definition.string.begin.svg'
+    'end': '\''
+    'endCaptures':
+      '0':
+        'name': 'punctuation.definition.string.end.svg'
+  'tag-class-attribute':
+    'name': 'meta.attribute-with-value.class.svg'
+    'begin': '\\b(class)\\s*(=)\\s*'
+    'captures':
+      '1':
+        'name': 'entity.other.attribute-name.class.svg'
+      '2':
+        'name': 'punctuation.separator.key-value.svg'
+    'end': '(?!\\G)|(?=\\s|/?>)'
+    'patterns': [
+      {
+        'include': '#string-double-quoted'
+      }
+      {
+        'include': '#string-single-quoted'
+      }
+    ]
+  'tag-d-attribute':
+    'name': 'meta.attribute-with-value.d.svg'
+    'begin': '\\b(d)\\s*(=)\\s*'
+    'beginCaptures':
+      '1':
+        'name': 'entity.other.attribute-name.d.svg'
+      '2':
+        'name': 'punctuation.separator.key-value.svg'
+    'end': '(?!\\G)|(?=\\s|/?>)'
+    'patterns': [
+      {
+        'name': 'string.quoted.double.svg'
+        'begin': '"'
+        'beginCaptures':
+          '0':
+            'name': 'punctuation.definition.string.begin.svg'
+        'end': '"'
+        'endCaptures':
+          '0':
+            'name': 'punctuation.definition.string.end.svg'
+        'contentName': 'text.xml.svg.instruction-list'
         'patterns': [
           {
-            'captures':
-              '1':
-                'name': 'punctuation.definition.comment.js'
-            'match': '(//).*?((?=</handler)|$\\n?)'
-            'name': 'comment.line.double-slash.js'
-          }
-          {
-            'begin': '/\\*'
+            'name': 'meta.instruction-list.path.svg'
+            'match': '[^"]+'
             'captures':
               '0':
-                'name': 'punctuation.definition.comment.js'
-            'end': '\\*/|(?=</handler)'
-            'name': 'comment.block.js'
+                'patterns': [
+                  {
+                    'include': '#path-data'
+                  }
+                ]
           }
+        ]
+      }
+      {
+        'name': 'string.quoted.single.svg'
+        'begin': "'"
+        'beginCaptures':
+          '0':
+            'name': 'punctuation.definition.string.begin.svg'
+        'end': "'"
+        'endCaptures':
+          '0':
+            'name': 'punctuation.definition.string.end.svg'
+        'contentName': 'source.css.style.svg'
+        'patterns': [
           {
-            'include': 'source.js'
+            'name': 'meta.property-list.css'
+            'match': "[^']+"
+            'captures':
+              '0':
+                'patterns': [
+                  {
+                    'include': 'source.css#rule-list-innards'
+                  }
+                ]
           }
         ]
       }
     ]
-  }
-]
-'scopeName': 'text.xml.svg'
+  'tag-generic-attribute':
+    'patterns': [
+      {
+        'name': 'meta.attribute-with-value.svg'
+        'begin': '([^\\s/=>"\'<]+)\\s*(=)\\s*'
+        'beginCaptures':
+          '1':
+            'name': 'entity.other.attribute-name.svg'
+          '2':
+            'name': 'punctuation.separator.key-value.svg'
+        'end': '(?!\\G)|(?=\\s|/?>)'
+        'patterns': [
+          {
+            'include': '#string-double-quoted'
+          }
+          {
+            'include': '#string-single-quoted'
+          }
+        ]
+      }
+    ]
+  'tag-id-attribute':
+    'name': 'meta.attribute-with-value.id.svg'
+    'begin': '\\b(id)\\s*(=)\\s*'
+    'captures':
+      '1':
+        'name': 'entity.other.attribute-name.id.svg'
+      '2':
+        'name': 'punctuation.separator.key-value.svg'
+    'end': '(?!\\G)|(?=\\s|/?>)'
+    'patterns': [
+      {
+        'name': 'string.quoted.double.svg'
+        'begin': '"'
+        'beginCaptures':
+          '0':
+            'name': 'punctuation.definition.string.begin.svg'
+        'contentName': 'meta.toc-list.id.svg'
+        'end': '"'
+        'endCaptures':
+          '0':
+            'name': 'punctuation.definition.string.end.svg'
+      }
+      {
+        'name': 'string.quoted.single.svg'
+        'begin': '\''
+        'beginCaptures':
+          '0':
+            'name': 'punctuation.definition.string.begin.svg'
+        'contentName': 'meta.toc-list.id.svg'
+        'end': '\''
+        'endCaptures':
+          '0':
+            'name': 'punctuation.definition.string.end.svg'
+      }
+    ]
+  'tag-stuff':
+    'patterns': [
+      {
+        'include': '#tag-id-attribute'
+      }
+      {
+        'include': '#tag-class-attribute'
+      }
+      {
+        'include': '#tag-style-attribute'
+      }
+      {
+        'include': '#tag-generic-attribute'
+      }
+    ]
+  'tag-style-attribute':
+    'name': 'meta.attribute-with-value.style.svg'
+    'begin': '\\b(style)\\s*(=)\\s*'
+    'beginCaptures':
+      '1':
+        'name': 'entity.other.attribute-name.style.svg'
+      '2':
+        'name': 'punctuation.separator.key-value.svg'
+    'end': '(?!\\G)|(?=\\s|/?>)'
+    'patterns': [
+      {
+        'name': 'string.quoted.double.svg'
+        'begin': '"'
+        'beginCaptures':
+          '0':
+            'name': 'punctuation.definition.string.begin.svg'
+        'end': '"'
+        'endCaptures':
+          '0':
+            'name': 'punctuation.definition.string.end.svg'
+        'contentName': 'source.css.style.svg'
+        'patterns': [
+          {
+            'match': '[^"]+'
+            'name': 'meta.property-list.css'
+            'captures':
+              '0':
+                'patterns': [
+                  {
+                    'include': 'source.css#rule-list-innards'
+                  }
+                ]
+          }
+        ]
+      }
+      {
+        'name': 'string.quoted.single.svg'
+        'begin': "'"
+        'beginCaptures':
+          '0':
+            'name': 'punctuation.definition.string.begin.svg'
+        'end': "'"
+        'endCaptures':
+          '0':
+            'name': 'punctuation.definition.string.end.svg'
+        'contentName': 'source.css.style.svg'
+        'patterns': [
+          {
+            'name': 'meta.property-list.css'
+            'match': "[^']+"
+            'captures':
+              '0':
+                'patterns': [
+                  {
+                    'include': 'source.css#rule-list-innards'
+                  }
+                ]
+          }
+        ]
+      }
+    ]
